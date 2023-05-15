@@ -31,6 +31,7 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
         private Rigidbody2D goalRigid2D;
         private GameObject prevGameObject;
         private GameObject goalGameObject;
+        private EntityLiving entityLiving;
 
         public override void OnStart()
         {
@@ -38,6 +39,7 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
             if (currentGameObject != prevGameObject) {
                 rigidbody2D = currentGameObject.GetComponent<Rigidbody2D>();
                 prevGameObject = currentGameObject;
+                entityLiving = GetComponent<EntityLiving>();
             }
             
             var target = Physics2D.OverlapCircle(transform.position, outerRadius, mask);
@@ -82,11 +84,18 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
                 return TaskStatus.Failure;
             }
 
+            if (entityLiving == null) {
+                Debug.LogWarning("entityLiving is null");
+                return TaskStatus.Failure;
+            }
+
             Vector2 position1 = rigidbody2D.position;
             Vector2 position2 = goalRigid2D.position;
             Vector2 difference = position2 - position1;
             Vector2 direction = difference.normalized;
 
+            entityLiving.SetDirection(direction);
+            
             rigidbody2D.MovePosition(rigidbody2D.position + direction * Time.fixedDeltaTime * speed);
 
             if (Vector2.Distance(rigidbody2D.position, goalGameObject.transform.position) < radius) {

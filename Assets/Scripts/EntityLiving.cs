@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public abstract class EntityLiving : MonoBehaviour
 {
@@ -13,10 +14,25 @@ public abstract class EntityLiving : MonoBehaviour
     private Rigidbody2D rigid;
     private bool lockedByAnimation;
     private bool prevHurtAnim, prevDyingAnim;
+    private Vector2 direction;
+    private bool canDespawn;
     
     private protected bool IsClipPlaying(AnimationClip clip) {
         AnimatorClipInfo[] clipInfo = animator.GetCurrentAnimatorClipInfo(0);
         return clipInfo.Length > 0 && clipInfo[0].clip.name == clip.name;
+    }
+    
+    public float GetCurrentAnimatorTime() {
+        AnimatorStateInfo animState = animator.GetCurrentAnimatorStateInfo(0);
+        float currentTime = animState.normalizedTime % 1;
+        return currentTime;
+    }
+
+    private float RemainingPercentageTime(AnimationClip clip) {
+        float delta = GetCurrentAnimatorTime();
+        float remainingPercentage = 1 - delta / clip.length;
+        //Debug.Log(delta + " --- " + limit);
+        return remainingPercentage;
     }
 
     private protected bool IsClipPlaying_Dying() {
@@ -66,6 +82,7 @@ public abstract class EntityLiving : MonoBehaviour
         animator = GetComponent<Animator>();
         lockedByAnimation = false;
         prevHurtAnim = prevDyingAnim = false;
+        canDespawn = false;
     }
 
     // Update is called once per frame
@@ -80,33 +97,54 @@ public abstract class EntityLiving : MonoBehaviour
             if (prevHurtAnim && !currHurtAnim) {
                 lockedByAnimation = false;
             }
+            float minBacklash = 0.0001f;
+            Rigidbody2D rig = GetRigid();
+            if (currHurtAnim) {
+                float fl = RemainingPercentageTime(clipHurtDown);
+                rig.MovePosition(rig.position - direction * Time.fixedDeltaTime * walkSpeed * 0.1f * (fl > minBacklash ? fl : minBacklash));
+            }
             prevHurtAnim = currHurtAnim;
 
             bool currDyingAnim = IsClipPlaying_Dying();
-            if (prevDyingAnim && !currDyingAnim) {
-                Destroy(this);
+            float remainingDyingPercentage = RemainingPercentageTime(clipDieDown);
+            if (prevDyingAnim && remainingDyingPercentage < 0.1f) { //TODO: FIXME: remainingDyingPercentage < 0.1f could possibly skip when game lags
+                GetComponent<SpriteRenderer>().enabled = false;
+            }
+            if (currDyingAnim) {
+                
+                rig.MovePosition(rig.position - direction * Time.fixedDeltaTime * walkSpeed * 0.1f * 
+                    (remainingDyingPercentage > minBacklash ? remainingDyingPercentage : minBacklash));
             }
             prevDyingAnim = currDyingAnim;
         }
     }
-    
+
+    public void SetDirection(Vector2 dir) {
+        this.direction = dir;
+    }
     private protected Vector2 GetMovement() {
         return movement;
     }
-    private protected Animator GetAnimator() {
+    public Animator GetAnimator() {
+        if (animator == null) animator = GetComponent<Animator>();
         return animator;
     }    
     private protected Rigidbody2D GetRigid() {
+        if (rigid == null) rigid = GetComponent<Rigidbody2D>();
         return rigid;
     }
 
     public void SubLife() {
         lifes--;
+        Debug.Log("Health: " + lifes);
         if (lifes > 0) {
-            animator.SetTrigger("isHurt");
+            GetAnimator().SetTrigger("isHurt");
+            Debug.Log("hurt");
+
         }
         else {
-            animator.SetTrigger("isDying");
+            Debug.Log("dying");
+            GetAnimator().SetTrigger("isDying");
         }
 
         lockedByAnimation = true;
