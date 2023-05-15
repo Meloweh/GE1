@@ -8,12 +8,12 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
     {
         [Tooltip("The GameObject that the task operates on. If null the task GameObject is used.")]
         public SharedGameObject targetGameObject;
-        [Tooltip("Position Goal")]
-        public GameObject goalGameObject;
         [Tooltip("Movement speed")]
         public float speed;
         [Tooltip("Radius in which goal is reached")]
         public float radius;
+        [Tooltip("Radius in which goal is lost")]
+        public float outerRadius;
         [Tooltip("Walk animation")]
         public bool shouldAnimate;
         [Tooltip("Animator")]
@@ -24,10 +24,13 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
         public string y;
         [Tooltip("Walk blend")]
         public string isWalking;
+        [Tooltip("Collider mask")]
+        public LayerMask mask;
 
         private Rigidbody2D rigidbody2D;
         private Rigidbody2D goalRigid2D;
         private GameObject prevGameObject;
+        private GameObject goalGameObject;
 
         public override void OnStart()
         {
@@ -36,8 +39,13 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
                 rigidbody2D = currentGameObject.GetComponent<Rigidbody2D>();
                 prevGameObject = currentGameObject;
             }
+            
+            var target = Physics2D.OverlapCircle(transform.position, outerRadius, mask);
+            if (target != null) {
+                goalGameObject = target.gameObject;
+            }
+            
             if (goalGameObject != null) { //TODO: ensure rigid2D
-                Debug.Log(goalGameObject.name);
                 goalRigid2D = goalGameObject.GetComponent<Rigidbody2D>();
             }
         }
@@ -64,12 +72,16 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
                 Debug.LogWarning("goalGameObject is null");
                 return TaskStatus.Failure;
             }
+
+            if (goalGameObject == null) {
+                return TaskStatus.Failure;
+            }
             
             if (goalRigid2D == null) {
                 Debug.LogWarning("goalRigid2D is null");
                 return TaskStatus.Failure;
             }
-            
+
             Vector2 position1 = rigidbody2D.position;
             Vector2 position2 = goalRigid2D.position;
             Vector2 difference = position2 - position1;

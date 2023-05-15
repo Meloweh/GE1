@@ -6,8 +6,13 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour {
     public AnimationClip clipAttackLeft, clipAttackRight, clipAttackUp, clipAttackDown;
+    public AnimationClip clipHurtLeft, clipHurtRight, clipHurtUp, clipHurtDown;
+    public AnimationClip clipDieLeft, clipDieRight, clipDieUp, clipDieDown;
+    
+    [SerializeField] GameObject meleeColliderLeft, meleeColliderRight, meleeColliderUp, meleeColliderDown;
     
     [SerializeField] private float walkSpeed = 10f;
+    [SerializeField] private short lifes = 3;
 
     private Vector2 movement;
     private Animator animator;
@@ -32,18 +37,27 @@ public class PlayerMovement : MonoBehaviour {
             return false;
         }
         if (clipInfo[0].clip.name == clipAttackLeft.name) {
+            meleeColliderLeft.SetActive(true);
             return true;
         }
         if (clipInfo[0].clip.name == clipAttackRight.name) {
+            meleeColliderRight.SetActive(true);
             return true;
         }
         if (clipInfo[0].clip.name == clipAttackUp.name) {
+            meleeColliderUp.SetActive(true);
             return true;
         }
         if (clipInfo[0].clip.name == clipAttackDown.name) {
+            meleeColliderDown.SetActive(true);
             return true;
         }
-
+        
+        meleeColliderLeft.SetActive(false);
+        meleeColliderRight.SetActive(false);
+        meleeColliderUp.SetActive(false);
+        meleeColliderDown.SetActive(false);
+        
         return false;
     }
 
