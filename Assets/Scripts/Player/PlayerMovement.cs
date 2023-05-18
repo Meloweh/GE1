@@ -6,9 +6,10 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : EntityHostile {
-    
-    // Start is called before the first frame update
+    [SerializeField] private Sprite face;
+    private Dialog dialog;
     void Start() {
+
     }
 
     private void OnMovement(InputValue iv) {
@@ -31,9 +32,12 @@ public class PlayerMovement : EntityHostile {
             GetAnimator().SetTrigger("isMelee");
             isAttacking = true;
         }
+
+        if (Input.GetKeyUp(KeyCode.U)) {
+            DoSampleDialog();
+        }
     }
 
-    // Update is called once per frame
     private protected new void FixedUpdate() {
         base.FixedUpdate();
         if (IsHurtLocked()) {
@@ -47,5 +51,15 @@ public class PlayerMovement : EntityHostile {
 
         // walk on ice
         //rigid.AddForce(movement * walkSpeed);
+    }
+
+    private void DoSampleDialog() {
+        dialog = new Dialog();
+        dialog.speakerFace = face;
+        dialog.sentences.Add("Hello dear <color=red>friend</color>! How are you?");
+        dialog.sentences.Add("This is a <color=blue>color</color> test.");
+        dialog.sentences.Add("<color=blue>Enjoy!</color>");
+        DialogManager.instance.StartDialog(dialog);
+
     }
 }
