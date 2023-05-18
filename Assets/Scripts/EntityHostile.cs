@@ -6,8 +6,9 @@ public class EntityHostile : EntityLiving
 {
     [SerializeField] private AnimationClip clipAttackLeft, clipAttackRight, clipAttackUp, clipAttackDown;
     [SerializeField] private GameObject meleeColliderLeft, meleeColliderRight, meleeColliderUp, meleeColliderDown;
-    
-    private bool IsAttackAnimation() {
+
+    private protected bool isAttacking;
+    public bool IsAttackAnimation() {
         AnimatorClipInfo[] clipInfo = GetAnimator().GetCurrentAnimatorClipInfo(0);
         if (clipInfo.Length <= 0) {
             return false;
@@ -37,14 +38,13 @@ public class EntityHostile : EntityLiving
         return false;
     }
 
-    private protected void SetMelee() {
+    public void SetMelee() {
         GetAnimator().SetTrigger("isMelee");
     }
     
     // Start is called before the first frame update
-    void Start()
-    {
-        
+    void Start() {
+        isAttacking = false;
     }
 
     // Update is called once per frame
@@ -53,4 +53,7 @@ public class EntityHostile : EntityLiving
         
     }
     
+    private protected new void FixedUpdate() {
+        base.FixedUpdate();
+    }
 }

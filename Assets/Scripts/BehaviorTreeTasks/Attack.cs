@@ -8,58 +8,33 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
     {
         [Tooltip("The GameObject that the task operates on. If null the task GameObject is used.")]
         public SharedGameObject targetGameObject;
-        [Tooltip("Melee blend")]
-        public string isMelee;
-        [Tooltip("Animator")]
-        public Animator animator;
-        [Tooltip("Attack clips")]
-        public AnimationClip clipAttackLeft, clipAttackRight, clipAttackUp, clipAttackDown;
-
-        private Rigidbody2D rigidbody2D;
         private GameObject prevGameObject;
         private bool wasAttacking;
-        
-        private bool IsAttackAnimation() {
-            AnimatorClipInfo[] clipInfo = animator.GetCurrentAnimatorClipInfo(0);
-            if (clipInfo.Length <= 0) {
-                return false;
-            }
-            if (clipInfo[0].clip.name == clipAttackLeft.name) {
-                return true;
-            }
-            if (clipInfo[0].clip.name == clipAttackRight.name) {
-                return true;
-            }
-            if (clipInfo[0].clip.name == clipAttackUp.name) {
-                return true;
-            }
-            if (clipInfo[0].clip.name == clipAttackDown.name) {
-                return true;
-            }
-
-            return false;
-        }
+        private EntityHostile entityHostile;
 
         public override void OnStart()
         {
             var currentGameObject = GetDefaultGameObject(targetGameObject.Value);
             if (currentGameObject != prevGameObject) {
-                rigidbody2D = currentGameObject.GetComponent<Rigidbody2D>();
+                entityHostile = currentGameObject.GetComponent<EntityHostile>();
                 prevGameObject = currentGameObject;
             }
 
             wasAttacking = false;
-            animator.SetTrigger(isMelee);
+            if (entityHostile != null) {
+                entityHostile.SetMelee();
+            }
+            
         }
 
         public override TaskStatus OnUpdate()
         {
-            if (rigidbody2D == null) {
-                Debug.LogWarning("Rigidbody2D is null");
+            if (entityHostile == null) {
+                Debug.LogWarning("entityHostile is null");
                 return TaskStatus.Failure;
             }
-
-            bool isAttackAnimation = IsAttackAnimation();
+            
+            bool isAttackAnimation = entityHostile.IsAttackAnimation();
             wasAttacking = wasAttacking || isAttackAnimation;
 
             if (isAttackAnimation || !wasAttacking) {

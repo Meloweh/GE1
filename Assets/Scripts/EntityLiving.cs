@@ -9,13 +9,14 @@ public abstract class EntityLiving : MonoBehaviour
     [SerializeField] private AnimationClip clipDieLeft, clipDieRight, clipDieUp, clipDieDown;
     [SerializeField] private float walkSpeed = 10f;
     
-    private Vector2 movement;
+    private protected Vector2 movement;
     private Animator animator;
     private Rigidbody2D rigid;
     private bool lockedByAnimation;
     private bool prevHurtAnim, prevDyingAnim;
     private Vector2 direction;
-    private bool canDespawn;
+    private float minBacklash = 0.0001f;
+    
     
     private protected bool IsClipPlaying(AnimationClip clip) {
         AnimatorClipInfo[] clipInfo = animator.GetCurrentAnimatorClipInfo(0);
@@ -82,7 +83,6 @@ public abstract class EntityLiving : MonoBehaviour
         animator = GetComponent<Animator>();
         lockedByAnimation = false;
         prevHurtAnim = prevDyingAnim = false;
-        canDespawn = false;
     }
 
     // Update is called once per frame
@@ -91,27 +91,28 @@ public abstract class EntityLiving : MonoBehaviour
         
     }
 
-    private void FixedUpdate() {
+    private protected void FixedUpdate() {
         if (lockedByAnimation) {
             bool currHurtAnim = IsClipPlaying_Hurt();
             if (prevHurtAnim && !currHurtAnim) {
                 lockedByAnimation = false;
             }
-            float minBacklash = 0.0001f;
+            
             Rigidbody2D rig = GetRigid();
             if (currHurtAnim) {
                 float fl = RemainingPercentageTime(clipHurtDown);
-                rig.MovePosition(rig.position - direction * Time.fixedDeltaTime * walkSpeed * 0.1f * (fl > minBacklash ? fl : minBacklash));
+                rig.MovePosition(rig.position - direction * Time.fixedDeltaTime * walkSpeed * 0.1f *
+                    (fl > minBacklash ? fl : minBacklash));
             }
             prevHurtAnim = currHurtAnim;
 
             bool currDyingAnim = IsClipPlaying_Dying();
             float remainingDyingPercentage = RemainingPercentageTime(clipDieDown);
-            if (prevDyingAnim && remainingDyingPercentage < 0.1f) { //TODO: FIXME: remainingDyingPercentage < 0.1f could possibly skip when game lags
-                GetComponent<SpriteRenderer>().enabled = false;
-            }
+            /*if (prevDyingAnim && remainingDyingPercentage < 0.1f) { //TODO: FIXME: remainingDyingPercentage < 0.1f could possibly skip when game lags
+                Destroy(this.gameObject);
+                //GetComponent<SpriteRenderer>().enabled = false;
+            }*/
             if (currDyingAnim) {
-                
                 rig.MovePosition(rig.position - direction * Time.fixedDeltaTime * walkSpeed * 0.1f * 
                     (remainingDyingPercentage > minBacklash ? remainingDyingPercentage : minBacklash));
             }
@@ -119,11 +120,11 @@ public abstract class EntityLiving : MonoBehaviour
         }
     }
 
+    public void DestroySelf() {
+        Destroy(gameObject);
+    }
     public void SetDirection(Vector2 dir) {
         this.direction = dir;
-    }
-    private protected Vector2 GetMovement() {
-        return movement;
     }
     public Animator GetAnimator() {
         if (animator == null) animator = GetComponent<Animator>();
@@ -132,6 +133,10 @@ public abstract class EntityLiving : MonoBehaviour
     private protected Rigidbody2D GetRigid() {
         if (rigid == null) rigid = GetComponent<Rigidbody2D>();
         return rigid;
+    }
+
+    private protected float GetWalkSpeed() {
+        return walkSpeed;
     }
 
     public void SubLife() {
@@ -145,6 +150,7 @@ public abstract class EntityLiving : MonoBehaviour
         else {
             Debug.Log("dying");
             GetAnimator().SetTrigger("isDying");
+            Invoke(nameof(DestroySelf), clipDieDown.length);
         }
 
         lockedByAnimation = true;
@@ -156,5 +162,15 @@ public abstract class EntityLiving : MonoBehaviour
 
     public bool IsAlive() {
         return lifes > 0;
+    }
+
+    private protected void UpdateMovementAnimation() {
+        if (movement.x != 0 || movement.y != 0) {
+            GetAnimator().SetFloat("X", movement.x);
+            GetAnimator().SetFloat("Y", movement.y);
+            GetAnimator().SetBool("isWalking", true);
+        } else {
+            GetAnimator().SetBool("isWalking", false);
+        }
     }
 }
