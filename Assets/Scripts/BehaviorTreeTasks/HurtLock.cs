@@ -10,7 +10,7 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
         public SharedGameObject targetGameObject;
         private GameObject prevGameObject;
         private EntityLiving entityLiving;
-        private bool shouldSubHealth = true;
+        //private bool shouldSubHealth = true;
 
         public override void OnStart()
         {
@@ -27,16 +27,16 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
                 return TaskStatus.Failure;
             }
 
-            if (shouldSubHealth) {
+            /*if (shouldSubHealth) {
                 entityLiving.SubLife();
                 shouldSubHealth = false;
-            }
+            }*/
             if (entityLiving.IsHurtLocked()) {
                 //Debug.LogWarning("Running part");
                 return TaskStatus.Running;
             }
             //Debug.Log("SUCCESS part");
-            shouldSubHealth = true; 
+            //shouldSubHealth = true; 
             return TaskStatus.Success;
         }
 

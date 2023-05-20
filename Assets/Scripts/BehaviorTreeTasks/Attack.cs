@@ -22,6 +22,7 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
 
             wasAttacking = false;
             if (entityHostile != null) {
+                entityHostile.SetMeleeDir();
                 entityHostile.SetMelee();
             }
             

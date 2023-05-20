@@ -96,6 +96,7 @@ public abstract class EntityLiving : MonoBehaviour
             bool currHurtAnim = IsClipPlaying_Hurt();
             if (prevHurtAnim && !currHurtAnim) {
                 lockedByAnimation = false;
+                movement = Vector2.zero;
             }
             
             Rigidbody2D rig = GetRigid();
@@ -159,6 +160,8 @@ public abstract class EntityLiving : MonoBehaviour
     public bool IsHurtLocked() {
         return lockedByAnimation;
     }
+    
+    
 
     public bool IsAlive() {
         return lifes > 0;
@@ -172,5 +175,20 @@ public abstract class EntityLiving : MonoBehaviour
         } else {
             GetAnimator().SetBool("isWalking", false);
         }
+    }
+
+    public void DoHurt(Vector2 dir) {
+        Vector2 knockback = dir.normalized * -1;
+        lockedByAnimation = true;
+        direction = knockback;
+        movement = direction;
+        GetAnimator().SetFloat("X", knockback.x);
+        GetAnimator().SetFloat("Y", knockback.y);
+        //GetAnimator().SetBool("isWalking", true);
+        SubLife();
+    }
+
+    public Vector2 GetDirection() {
+        return direction;
     }
 }

@@ -14,18 +14,22 @@ public class EntityHostile : EntityLiving
             return false;
         }
         if (clipInfo[0].clip.name == clipAttackLeft.name) {
+            Debug.LogWarning("left");
             meleeColliderLeft.SetActive(true);
             return true;
         }
         if (clipInfo[0].clip.name == clipAttackRight.name) {
+            Debug.LogWarning("right");
             meleeColliderRight.SetActive(true);
             return true;
         }
         if (clipInfo[0].clip.name == clipAttackUp.name) {
+            Debug.LogWarning("up");
             meleeColliderUp.SetActive(true);
             return true;
         }
         if (clipInfo[0].clip.name == clipAttackDown.name) {
+            Debug.LogWarning("down");
             meleeColliderDown.SetActive(true);
             return true;
         }
@@ -55,5 +59,19 @@ public class EntityHostile : EntityLiving
     
     private protected new void FixedUpdate() {
         base.FixedUpdate();
+    }
+    
+    private float Sigmoid(float val) {
+        return val > 0.5f ? 1 : val < -0.5f ? -1 : 0;
+    }
+
+    private Vector2 Sigmoid(Vector2 val) {
+        return new Vector2(Sigmoid(val.x), Sigmoid(val.y));
+    }
+
+    public void SetMeleeDir() {
+        var vec = Sigmoid(GetDirection().normalized);
+        GetAnimator().SetFloat("X", vec.x);
+        GetAnimator().SetFloat("Y", vec.y);
     }
 }
