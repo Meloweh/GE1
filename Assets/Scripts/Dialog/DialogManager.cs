@@ -1,21 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class DialogManager : MonoBehaviour
-{
+public class DialogManager : MonoBehaviour {
     public TextMeshProUGUI dialogText;
     public Image speakerFace;
     private Queue<string> sentences;
     public bool isTyping = false;
     public static DialogManager instance;
+    public GameObject dialogBox;
+    private string prevSentence;
 
-    private void Awake()
-    {
-        if (instance != null)
-        {
+    private void Awake() {
+        if (instance != null) {
             Debug.LogWarning("More than one instance of DialogManager found!");
             return;
         }
@@ -23,64 +24,56 @@ public class DialogManager : MonoBehaviour
         dialogText.richText = true;
     }
 
-    private void Start()
-    {
+    private void Start() {
         sentences = new Queue<string>();
     }
 
-    public void StartDialog(Dialog dialog)
-    {
+    public void StartDialog(Dialog dialog) {
+        if (IsBusy()) return;
+        prevSentence = "";
         sentences.Clear();
+        dialogBox.SetActive(true);
 
-        foreach (string sentence in dialog.sentences)
-        {
+        foreach (string sentence in dialog.GetSentences()) {
             sentences.Enqueue(sentence);
         }
 
         DisplayNextSentence();
-        SetSpeakerFace(dialog.speakerFace);
+        SetSpeakerFace(dialog.GetSpeakersFace());
     }
 
-    public void DisplayNextSentence()
-    {
-        if (isTyping)
-        {
+    private void DisplayNextSentence() {
+        if (isTyping) {
             StopAllCoroutines();
-            dialogText.text = sentences.Peek();  // Display full sentence
+            dialogText.text = prevSentence;
+            //Debug.Log("A: " + prevSentence);
             isTyping = false;
-        }
-        else
-        {
-            if (sentences.Count == 0)
-            {
+        } else {
+            if (sentences.Count == 0) {
                 EndDialog();
                 return;
             }
-
+            //Debug.Log("B: " + sentences.Peek());
             string sentence = sentences.Dequeue();
+            prevSentence = sentence;
             StartCoroutine(TypeSentence(sentence));
         }
     }
 
 
-    IEnumerator TypeSentence(string sentence)
-    {
+    private IEnumerator TypeSentence(string sentence) {
         isTyping = true;
         dialogText.text = "";
 
         bool isTag = false;
         string tagContent = "";
 
-        foreach (char letter in sentence.ToCharArray())
-        {
-            if (letter == '<')
-            {
+        foreach (char letter in sentence.ToCharArray()) {
+            if (letter == '<') {
                 isTag = true;
                 tagContent = "<";
                 continue;
-            }
-            else if (letter == '>')
-            {
+            } else if (letter == '>') {
                 isTag = false;
                 tagContent += '>';
                 dialogText.text += tagContent;
@@ -88,8 +81,7 @@ public class DialogManager : MonoBehaviour
                 continue;
             }
 
-            if (isTag)
-            {
+            if (isTag) {
                 tagContent += letter;
                 continue;
             }
@@ -101,22 +93,20 @@ public class DialogManager : MonoBehaviour
         isTyping = false;
     }
 
+    public bool IsBusy() {
+        return dialogBox.activeSelf;
+    }
 
-
-
-    public void SetSpeakerFace(Sprite sprite)
-    {
+    private void SetSpeakerFace(Sprite sprite) {
         speakerFace.sprite = sprite;
     }
 
-    void EndDialog()
-    {
+    private void EndDialog() {
+        dialogBox.SetActive(false);
     }
     
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.Space)) {
             DisplayNextSentence();
         }
     }

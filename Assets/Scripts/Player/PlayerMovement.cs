@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : EntityHostile {
     [SerializeField] private Sprite face;
+    [SerializeField] private DialogManager dialogManager;
     private Dialog dialog;
     void Start() {
 
@@ -33,7 +34,7 @@ public class PlayerMovement : EntityHostile {
             isAttacking = true;
         }
 
-        if (Input.GetKeyUp(KeyCode.U)) {
+        if (Input.GetKeyUp(KeyCode.U) && !DialogManager.instance.IsBusy()) {
             DoSampleDialog();
         }
     }
@@ -54,12 +55,11 @@ public class PlayerMovement : EntityHostile {
     }
 
     private void DoSampleDialog() {
-        dialog = new Dialog();
-        dialog.speakerFace = face;
-        dialog.sentences.Add("Hello dear <color=red>friend</color>! How are you?");
-        dialog.sentences.Add("This is a <color=blue>color</color> test.");
-        dialog.sentences.Add("<color=blue>Enjoy!</color>");
-        DialogManager.instance.StartDialog(dialog);
+        dialog = new Dialog(face);
+        dialog.Add("Hello dear <color=red>friend</color>! How are you?");
+        dialog.Add("This is a <color=blue>color</color> test.");
+        dialog.Add("<color=blue>Enjoy!</color>");
+        dialogManager.StartDialog(dialog);
 
     }
 }
