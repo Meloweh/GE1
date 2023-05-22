@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 18791732}
   - component: {fileID: 18791731}
   - component: {fileID: 18791733}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Flowers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1514,7 +1514,7 @@ GameObject:
   - component: {fileID: 457990726}
   - component: {fileID: 457990725}
   - component: {fileID: 457990724}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Chests
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1825,7 +1825,7 @@ GameObject:
   - component: {fileID: 476774542}
   - component: {fileID: 476774541}
   - component: {fileID: 476774540}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4939,7 +4939,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -37.189293, y: -11.898049, z: -10}
+  m_LocalPosition: {x: -39.480484, y: -11.89779, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5051,7 +5051,7 @@ GameObject:
   - component: {fileID: 597505212}
   - component: {fileID: 597505211}
   - component: {fileID: 597505210}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15709,7 +15709,7 @@ GameObject:
   - component: {fileID: 782442069}
   - component: {fileID: 782442068}
   - component: {fileID: 782442067}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Trees (front)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20939,7 +20939,7 @@ GameObject:
   - component: {fileID: 973552638}
   - component: {fileID: 973552637}
   - component: {fileID: 973552636}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Other obstacles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21846,7 +21846,7 @@ GameObject:
   - component: {fileID: 1026180332}
   - component: {fileID: 1026180331}
   - component: {fileID: 1026180330}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53220,7 +53220,7 @@ GameObject:
   - component: {fileID: 1081641853}
   - component: {fileID: 1081641852}
   - component: {fileID: 1081641851}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Stones
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54090,7 +54090,7 @@ GameObject:
   - component: {fileID: 1265259842}
   - component: {fileID: 1265259841}
   - component: {fileID: 1265259840}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Houses
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57005,7 +57005,7 @@ GameObject:
   - component: {fileID: 1691461552}
   - component: {fileID: 1691461551}
   - component: {fileID: 1691461550}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Fences
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61270,7 +61270,7 @@ GameObject:
   - component: {fileID: 2113490834}
   - component: {fileID: 2113490833}
   - component: {fileID: 2113490832}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Misc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61793,7 +61793,7 @@ GameObject:
   - component: {fileID: 2124096228}
   - component: {fileID: 2124096227}
   - component: {fileID: 2124096226}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Trees
   m_TagString: Untagged
   m_Icon: {fileID: 0}
