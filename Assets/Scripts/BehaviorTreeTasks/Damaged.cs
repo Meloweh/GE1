@@ -48,13 +48,11 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
             if (target == null) {
                 return TaskStatus.Running;
             }
-            Debug.Log("HIT");
             var targetGameComponent = target.gameObject.transform.parent;
             if (targetGameComponent == null) {
                 Debug.Log("targetGameComponent is null");
                 return TaskStatus.Failure;
             }
-            Debug.LogWarning(targetGameComponent.name);
             EntityLiving living = targetGameComponent.GetComponent<EntityLiving>();
             if (living == null) {
                 Debug.Log("living is null");

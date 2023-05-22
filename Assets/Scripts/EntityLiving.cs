@@ -8,6 +8,7 @@ public abstract class EntityLiving : MonoBehaviour
     [SerializeField] private AnimationClip clipHurtLeft, clipHurtRight, clipHurtUp, clipHurtDown;
     [SerializeField] private AnimationClip clipDieLeft, clipDieRight, clipDieUp, clipDieDown;
     [SerializeField] private float walkSpeed = 10f;
+    [SerializeField] private LayerMask alphaMask;
     
     private protected Vector2 movement;
     private Animator animator;
@@ -16,7 +17,17 @@ public abstract class EntityLiving : MonoBehaviour
     private bool prevHurtAnim, prevDyingAnim;
     private Vector2 direction;
     private float minBacklash = 0.0001f;
+    private Vector2 prevPos;
+    private BoxCollider2D col;
     
+    public void HandleAlphaCollision() {
+        
+        if (GetCollider().IsTouchingLayers(alphaMask)) {
+            rigid.position = prevPos;
+        }
+
+        prevPos = GetRigid().position + Vector2.zero;
+    }
     
     private protected bool IsClipPlaying(AnimationClip clip) {
         AnimatorClipInfo[] clipInfo = animator.GetCurrentAnimatorClipInfo(0);
@@ -83,8 +94,18 @@ public abstract class EntityLiving : MonoBehaviour
         animator = GetComponent<Animator>();
         lockedByAnimation = false;
         prevHurtAnim = prevDyingAnim = false;
+        prevPos = rigid.position + Vector2.zero;
+        col = GetComponent<BoxCollider2D>();
     }
 
+    public BoxCollider2D GetCollider() {
+        if (col == null) {
+            col = GetComponent<BoxCollider2D>();
+        }
+
+        return col;
+    }
+    
     // Update is called once per frame
     void Update()
     {
@@ -109,16 +130,13 @@ public abstract class EntityLiving : MonoBehaviour
 
             bool currDyingAnim = IsClipPlaying_Dying();
             float remainingDyingPercentage = RemainingPercentageTime(clipDieDown);
-            /*if (prevDyingAnim && remainingDyingPercentage < 0.1f) { //TODO: FIXME: remainingDyingPercentage < 0.1f could possibly skip when game lags
-                Destroy(this.gameObject);
-                //GetComponent<SpriteRenderer>().enabled = false;
-            }*/
             if (currDyingAnim) {
                 rig.MovePosition(rig.position - direction * Time.fixedDeltaTime * walkSpeed * 0.1f * 
                     (remainingDyingPercentage > minBacklash ? remainingDyingPercentage : minBacklash));
             }
             prevDyingAnim = currDyingAnim;
         }
+        HandleAlphaCollision();
     }
 
     public void DestroySelf() {
@@ -142,14 +160,11 @@ public abstract class EntityLiving : MonoBehaviour
 
     public void SubLife() {
         lifes--;
-        Debug.Log("Health: " + lifes);
         if (lifes > 0) {
             GetAnimator().SetTrigger("isHurt");
-            Debug.Log("hurt");
 
         }
         else {
-            Debug.Log("dying");
             GetAnimator().SetTrigger("isDying");
             Invoke(nameof(DestroySelf), clipDieDown.length);
         }
