@@ -10,9 +10,9 @@ Available memory:        31229 MB
 Using pre-set license
 Pro License: YES
 
-(Unity:41183): Gtk-WARNING **: 11:07:54.514: Theme parsing error: gtk.css:1649:16: '-gtk-icon-size' is not a valid property name
+(Unity:27906): Gtk-WARNING **: 14:17:19.551: Theme parsing error: gtk.css:1649:16: '-gtk-icon-size' is not a valid property name
 
-(Unity:41183): Gtk-WARNING **: 11:07:54.514: Theme parsing error: gtk.css:1652:16: '-gtk-icon-size' is not a valid property name
+(Unity:27906): Gtk-WARNING **: 14:17:19.551: Theme parsing error: gtk.css:1652:16: '-gtk-icon-size' is not a valid property name
 Desktop is 4480 x 1440 @ 60 Hz
 Initialize udev device monitor.
 
@@ -28,7 +28,7 @@ AssetImportWorker1
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-41151
+33539
 Successfully changed project path to: /home/steven/Applications/Unity/Projects/og/GE1P
 /home/steven/Applications/Unity/Projects/og/GE1P
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -60,11 +60,11 @@ Successfully changed project path to: /home/steven/Applications/Unity/Projects/o
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [140188510507648] Host "[IP] 192.168.178.28 [Port] 0 [Flags] 2 [Guid] 885965030 [EditorId] 885965030 [Version] 1048832 [Id] LinuxEditor(16,192.168.178.27) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [140193858179712] Host "[IP] 192.168.178.27 [Port] 0 [Flags] 2 [Guid] 892153191 [EditorId] 892153191 [Version] 1048832 [Id] LinuxEditor(16,192.168.178.27) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [140188510507648] Host "[IP] 192.168.178.28 [Port] 0 [Flags] 2 [Guid] 885965030 [EditorId] 885965030 [Version] 1048832 [Id] LinuxEditor(16,192.168.178.27) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [140193858179712] Host "[IP] 192.168.178.27 [Port] 0 [Flags] 2 [Guid] 892153191 [EditorId] 892153191 [Version] 1048832 [Id] LinuxEditor(16,192.168.178.27) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 72,92 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 67,65 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0,00 ms.
 Initialize engine version: 2021.3.21f1 (1b156197d683)
 [Subsystems] Discovering subsystems at path /home/steven/Applications/Unity/Hub/Editor/2021.3.21f1/Editor/Data/Resources/UnitySubsystems
@@ -85,82 +85,82 @@ blend_equation_advanced_coherent GL_NVX_blend_equation_advanced_multi_draw_buffe
 der_passthrough GL_NV_gpu_program4 GL_NV_internalformat_sample_query GL_NV_gpu_program4_1 GL_NV_gpu_program5 GL_NV_gpu_program5_mem_extended GL_NV_gpu_program_fp64 GL_NV_gpu_shader5 GL_NV_half_float GL_NV_light_max_exponent GL_NV_memory_attachment GL_NV_mesh_shader GL_NV_multisample_coverage GL_NV_multisample_filter_hint GL_NV_occlusion_query GL_NV_packed_depth_stencil GL_NV_parameter_buffer_object GL_NV_parameter_buffer_object2 GL_NV_path_rendering GL_NV_path_rendering_shared_edge GL_NV_pixel_data_range GL_NV_point_sprite GL_NV_primitive_restart GL_NV_query_resource GL_NV_query_resource_tag GL_NV_register_combiners GL_NV_register_combiners2 GL_NV_representative_fragment_test GL_NV_sample_locations GL_NV_sample_mask_override_coverage GL_NV_scissor_exclusive GL_NV_shader_atomic_counters GL_NV_shader_atomic_float GL_NV_shader_atomic_float64 GL_NV_shader_atomic_fp16_vector GL_NV_shader_atomic_int64 GL_NV_shader_buffer_load GL_NV_shader_storage_buffer_object GL_NV_shader_subgroup_partitioned GL_NV_shader_texture
 _footprint GL_NV_shading_rate_image GL_NV_stereo_view_rendering GL_NV_texgen_reflection GL_NV_texture_barrier GL_NV_texture_compression_vtc GL_NV_texture_env_combine4 GL_NV_texture_multisample GL_NV_texture_rectangle GL_NV_texture_rectangle_compressed GL_NV_texture_shader GL_NV_texture_shader2 GL_NV_texture_shader3 GL_NV_transform_feedback GL_NV_transform_feedback2 GL_NV_uniform_buffer_unified_memory GL_NV_uniform_buffer_std430_layout GL_NV_vdpau_interop GL_NV_vdpau_interop2 GL_NV_vertex_array_range GL_NV_vertex_array_range2 GL_NV_vertex_attrib_integer_64bit GL_NV_vertex_buffer_unified_memory GL_NV_vertex_program GL_NV_vertex_program1_1 GL_NV_vertex_program2 GL_NV_vertex_program2_option GL_NV_vertex_program3 GL_NV_viewport_array2 GL_NV_viewport_swizzle GL_NVX_conditional_render GL_NV_gpu_multicast GL_NVX_progress_fence GL_NVX_gpu_memory_info GL_NVX_nvenc_interop GL_NV_shader_thread_group GL_NV_shader_thread_shuffle GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_OVR_multiview GL_OVR
 _multiview2 GL_SGIS_generate_mipmap GL_SGIS_texture_lod GL_SGIX_depth_texture GL_SGIX_shadow GL_SUN_slice_accum
-OPENGL LOG: Creating OpenGL 4.5 graphics device ; Context level  <OpenGL 4.5> ; Context handle -145260504
+OPENGL LOG: Creating OpenGL 4.5 graphics device ; Context level  <OpenGL 4.5> ; Context handle 2097970008
 Initialize mono
 Mono path[0] = '/home/steven/Applications/Unity/Hub/Editor/2021.3.21f1/Editor/Data/Managed'
 Mono path[1] = '/home/steven/Applications/Unity/Hub/Editor/2021.3.21f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-linux'
 Mono config path = '/home/steven/Applications/Unity/Hub/Editor/2021.3.21f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56183
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56906
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: /home/steven/Applications/Unity/Hub/Editor/2021.3.21f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: /home/steven/Applications/Unity/Hub/Editor/2021.3.21f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
-Registered in 0,003598 seconds.
+Registered in 0,003476 seconds.
 Native extension for LinuxStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 77,42 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 72,70 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0,00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0,372 seconds
+- Completed reload, in  0,345 seconds
 Domain Reload Profiling:
-	ReloadAssembly (372ms)
-		BeginReloadAssembly (30ms)
+	ReloadAssembly (345ms)
+		BeginReloadAssembly (29ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (289ms)
-			LoadAssemblies (29ms)
+			CreateAndSetChildDomain (0ms)
+		EndReloadAssembly (267ms)
+			LoadAssemblies (28ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (59ms)
+			SetupTypeCache (51ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (17ms)
-			SetupLoadedEditorAssemblies (185ms)
+			RebuildScriptCaches (15ms)
+			SetupLoadedEditorAssemblies (169ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (5ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (77ms)
+				RefreshPlugins (73ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (76ms)
-				ProcessInitializeOnLoadMethodAttributes (26ms)
+				ProcessInitializeOnLoadAttributes (70ms)
+				ProcessInitializeOnLoadMethodAttributes (21ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0,003040 seconds.
+Registered in 0,002495 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image /home/steven/Applications/Unity/Projects/og/GE1P/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image /home/steven/Applications/Unity/Projects/og/GE1P/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
 Native extension for LinuxStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 74,05 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 68,24 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0,00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0,618 seconds
+- Completed reload, in  0,617 seconds
 Domain Reload Profiling:
-	ReloadAssembly (619ms)
-		BeginReloadAssembly (46ms)
+	ReloadAssembly (618ms)
+		BeginReloadAssembly (50ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (3ms)
+			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (10ms)
-		EndReloadAssembly (521ms)
-			LoadAssemblies (28ms)
+			CreateAndSetChildDomain (12ms)
+		EndReloadAssembly (515ms)
+			LoadAssemblies (29ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (118ms)
+			SetupTypeCache (119ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (35ms)
-			SetupLoadedEditorAssemblies (311ms)
+			SetupLoadedEditorAssemblies (304ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (6ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (74ms)
+				RefreshPlugins (68ms)
 				BeforeProcessingInitializeOnLoad (55ms)
-				ProcessInitializeOnLoadAttributes (154ms)
+				ProcessInitializeOnLoadAttributes (153ms)
 				ProcessInitializeOnLoadMethodAttributes (18ms)
 				AfterProcessingInitializeOnLoad (3ms)
 				EditorAssembliesLoaded (0ms)
@@ -170,12 +170,12 @@ Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler after 0.00 seconds
-Refreshing native plugins compatible for Editor in 0,90 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 0,71 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0,00 ms.
-Unloading 4809 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 53 unused Assets / (109,6 KB). Loaded Objects now: 5295.
+Unloading 4810 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 53 unused Assets / (109,6 KB). Loaded Objects now: 5296.
 Memory consumption went from 172,5 MB to 172,4 MB.
-Total: 2,565692 ms (FindLiveObjects: 0,186261 ms CreateObjectMapping: 0,056490 ms MarkObjects: 2,254801 ms  DeleteObjects: 0,067670 ms)
+Total: 2,679713 ms (FindLiveObjects: 0,199121 ms CreateObjectMapping: 0,086400 ms MarkObjects: 2,330861 ms  DeleteObjects: 0,062931 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -188,648 +188,13 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 13988,194083 seconds.
-  path: Assets/Sprites
-  artifactKey: Guid(5d29958c1766bb344a41a9b0428f305c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites using Guid(5d29958c1766bb344a41a9b0428f305c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b75a7c6c3ec0cdd4c8457d1fdd5063c9') in 0,005308 seconds 
+  Time since last request: 27123,739898 seconds.
+  path: Assets/RabbitSoldier.prefab
+  artifactKey: Guid(560b157b82e7e2c08aae04bef7305677) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RabbitSoldier.prefab using Guid(560b157b82e7e2c08aae04bef7305677) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c132a8b736e1ad0451e04a00ff1b43d5') in 0,052480 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0,000010 seconds.
-  path: Assets/Sprites/RPG Halloween tileset (full).png
-  artifactKey: Guid(120aaf31665740a4fae37fe3a8fbeb5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/RPG Halloween tileset (full).png using Guid(120aaf31665740a4fae37fe3a8fbeb5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33b7f4e761870ed816294be91df42e33') in 0,384281 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0,000017 seconds.
-  path: Assets/Sprites/RPG tileset (full) v1.6 - 200%.png
-  artifactKey: Guid(28aaa2a4fce73d24baa0dc2f9816eba6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/RPG tileset (full) v1.6 - 200%.png using Guid(28aaa2a4fce73d24baa0dc2f9816eba6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45765ed946720ac3eabf80846bceff26') in 0,358376 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 64,270864 seconds.
-  path: Assets/Sprites/Slime
-  artifactKey: Guid(326e5a142b45733ea8b9b667b19fe668) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Slime using Guid(326e5a142b45733ea8b9b667b19fe668) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f59b84e43f017895eea905fd074f922') in 0,000754 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 11,053718 seconds.
-  path: Assets/Sprites/Slime/Slime_die.png
-  artifactKey: Guid(f8f5437ca1d04469b8a63434ad705b06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Slime/Slime_die.png using Guid(f8f5437ca1d04469b8a63434ad705b06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e105aba6f51be3d0ca780a2b14c7de65') in 0,004935 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0,002494 seconds.
-  path: Assets/Sprites/Slime/Slime_move.png
-  artifactKey: Guid(51859ade4726a1a7681a4728bef84b21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Slime/Slime_move.png using Guid(51859ade4726a1a7681a4728bef84b21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f41ae86f32cccebfab10f180a12e704f') in 0,006702 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0,000017 seconds.
-  path: Assets/Sprites/Slime/Slime_idle.png
-  artifactKey: Guid(ce89371e7dbbaf24ba20380ed0600609) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Slime/Slime_idle.png using Guid(ce89371e7dbbaf24ba20380ed0600609) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a8da3faf56650df5b91e009d5e3274b') in 0,007530 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0,000012 seconds.
-  path: Assets/Sprites/Slime/Slime_hit.png
-  artifactKey: Guid(464e81500051283b98229cbed336a832) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Slime/Slime_hit.png using Guid(464e81500051283b98229cbed336a832) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '11ff598bae75f7627b967cb9ff68f84a') in 0,008139 seconds 
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-AssetImportWorker is now disconnected from the server
-Process exiting
-Checking for leaked weakptr:
-  Found no leaked weakptrs.
-All object instances wasn't destroyed before shutting down
-Assertion failed on expression: 'm_MemoryFSRefCount == 0'
-Memory Statistics:
-[ALLOC_TEMP_TLS] TLS Allocator
-  StackAllocators : 
-    [ALLOC_TEMP_CurlRequest]
-      Initial Block Size 64,0 KB
-      Current Block Size 64,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Loading.PreloadManager]
-      Peak usage frame count: [0-1,0 KB]: 1 frames
-      Initial Block Size 32,0 MB
-      Current Block Size 32,0 MB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_BakingJobs.Worker 31]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_BakingJobs.Worker 30]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_BakingJobs.Worker 29]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_BakingJobs.Worker 28]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_BakingJobs.Worker 27]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_BakingJobs.Worker 26]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_BakingJobs.Worker 25]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_BakingJobs.Worker 24]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_BakingJobs.Worker 23]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_BakingJobs.Worker 22]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_BakingJobs.Worker 21]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_BakingJobs.Worker 20]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_BakingJobs.Worker 19]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_BakingJobs.Worker 18]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_BakingJobs.Worker 17]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_BakingJobs.Worker 16]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_BakingJobs.Worker 15]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_BakingJobs.Worker 14]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_BakingJobs.Worker 13]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_BakingJobs.Worker 12]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_BakingJobs.Worker 11]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_BakingJobs.Worker 10]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_BakingJobs.Worker 9]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_BakingJobs.Worker 8]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_BakingJobs.Worker 7]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_BakingJobs.Worker 6]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_BakingJobs.Worker 5]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_BakingJobs.Worker 4]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_BakingJobs.Worker 3]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_BakingJobs.Worker 2]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_BakingJobs.Worker 1]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_BakingJobs.Worker 0]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_AssetDatabase.FileHasherHasher]
-      Initial Block Size 64,0 KB
-      Current Block Size 64,0 KB
-      Peak Allocated Bytes 31 B
-      Overflow Count 0
-    [ALLOC_TEMP_AssetDatabase.FileHasherReader]
-      Initial Block Size 64,0 KB
-      Current Block Size 64,0 KB
-      Peak Allocated Bytes 31 B
-      Overflow Count 0
-    [ALLOC_TEMP_AssetDatabase.FileHasherHasher]
-      Initial Block Size 64,0 KB
-      Current Block Size 64,0 KB
-      Peak Allocated Bytes 31 B
-      Overflow Count 0
-    [ALLOC_TEMP_AssetDatabase.FileHasherReader]
-      Initial Block Size 64,0 KB
-      Current Block Size 64,0 KB
-      Peak Allocated Bytes 31 B
-      Overflow Count 0
-    [ALLOC_TEMP_AssetDatabase.FileHasherHasher]
-      Initial Block Size 64,0 KB
-      Current Block Size 64,0 KB
-      Peak Allocated Bytes 31 B
-      Overflow Count 0
-    [ALLOC_TEMP_AssetDatabase.FileHasherReader]
-      Initial Block Size 64,0 KB
-      Current Block Size 64,0 KB
-      Peak Allocated Bytes 31 B
-      Overflow Count 0
-    [ALLOC_TEMP_AssetDatabase.FileHasherHasher]
-      Initial Block Size 64,0 KB
-      Current Block Size 64,0 KB
-      Peak Allocated Bytes 31 B
-      Overflow Count 0
-    [ALLOC_TEMP_AssetDatabase.FileHasherReader]
-      Initial Block Size 64,0 KB
-      Current Block Size 64,0 KB
-      Peak Allocated Bytes 31 B
-      Overflow Count 0
-    [ALLOC_TEMP_Loading.AsyncRead]
-      Initial Block Size 64,0 KB
-      Current Block Size 64,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_BatchDeleteObjects]
-      Initial Block Size 64,0 KB
-      Current Block Size 64,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Background Job.Worker 15]
-      Initial Block Size 32,0 KB
-      Current Block Size 32,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Background Job.Worker 14]
-      Initial Block Size 32,0 KB
-      Current Block Size 32,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Background Job.Worker 13]
-      Initial Block Size 32,0 KB
-      Current Block Size 32,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Background Job.Worker 12]
-      Initial Block Size 32,0 KB
-      Current Block Size 32,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Background Job.Worker 11]
-      Initial Block Size 32,0 KB
-      Current Block Size 32,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Background Job.Worker 10]
-      Initial Block Size 32,0 KB
-      Current Block Size 32,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Background Job.Worker 9]
-      Initial Block Size 32,0 KB
-      Current Block Size 32,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Background Job.Worker 8]
-      Initial Block Size 32,0 KB
-      Current Block Size 32,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Background Job.Worker 7]
-      Initial Block Size 32,0 KB
-      Current Block Size 32,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Background Job.Worker 6]
-      Initial Block Size 32,0 KB
-      Current Block Size 32,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Background Job.Worker 5]
-      Initial Block Size 32,0 KB
-      Current Block Size 32,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Background Job.Worker 4]
-      Initial Block Size 32,0 KB
-      Current Block Size 32,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Background Job.Worker 3]
-      Initial Block Size 32,0 KB
-      Current Block Size 32,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Background Job.Worker 2]
-      Initial Block Size 32,0 KB
-      Current Block Size 32,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Background Job.Worker 1]
-      Initial Block Size 32,0 KB
-      Current Block Size 32,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Background Job.Worker 0]
-      Initial Block Size 32,0 KB
-      Current Block Size 32,0 KB
-      Peak Allocated Bytes 10,4 KB
-      Overflow Count 0
-    [ALLOC_TEMP_Job.Worker 30]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.Worker 29]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.Worker 28]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.Worker 27]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.Worker 26]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.Worker 25]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.Worker 24]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.Worker 23]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.Worker 22]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.Worker 21]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.Worker 20]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.Worker 19]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.Worker 18]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.Worker 17]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.Worker 16]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.Worker 15]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.Worker 14]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.Worker 13]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.Worker 12]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.Worker 11]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.Worker 10]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.Worker 9]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.Worker 8]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.Worker 7]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.Worker 6]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.Worker 5]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.Worker 4]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.Worker 3]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.Worker 2]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.Worker 1]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.Worker 0]
-      Initial Block Size 256,0 KB
-      Current Block Size 256,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_MAIN]
-      Initial Block Size 16,0 MB
-      Current Block Size 17,1 MB
-      Peak Allocated Bytes 14,5 MB
-      Overflow Count 0
-    [ALLOC_TEMP_CoreBusinessMetricsCache]
-      Initial Block Size 64,0 KB
-      Current Block Size 64,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_AssetDatabase.IOService]
-      Initial Block Size 64,0 KB
-      Current Block Size 64,0 KB
-      Peak Allocated Bytes 32,6 KB
-      Overflow Count 0
-    [ALLOC_TEMP_Profiler.Dispatcher]
-      Initial Block Size 64,0 KB
-      Current Block Size 64,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_AssetGarbageCollectorHelper] x 31
-      Initial Block Size 64,0 KB
-      Current Block Size 64,0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-[ALLOC_MEMORYPROFILER]
-  Requested Block Size 1,0 MB
-  Peak Block count 2
-  Peak Allocated memory 0,9 MB
-  Peak Large allocation bytes 0 B
-[ALLOC_DEFAULT] Dual Thread Allocator
-  Peak main deferred allocation count 463
-    [ALLOC_BUCKET]
-      Large Block size 32,0 MB
-      Used Block count 1
-      Peak Allocated bytes 6,5 MB
-    [ALLOC_DEFAULT_MAIN]
-      Requested Block Size 16,0 MB
-      Peak Block count 4
-      Peak Allocated memory 60,8 MB
-      Peak Large allocation bytes 0 B
-    [ALLOC_DEFAULT_THREAD]
-      Requested Block Size 16,0 MB
-      Peak Block count 1
-      Peak Allocated memory 413,0 KB
-      Peak Large allocation bytes 0 B
-[ALLOC_TEMP_JOB_1_FRAME]
-  Initial Block Size 2,0 MB
-  Used Block Count 1
-  Overflow Count (too large) 0
-  Overflow Count (full) 0
-[ALLOC_TEMP_JOB_2_FRAMES]
-  Initial Block Size 2,0 MB
-  Used Block Count 1
-  Overflow Count (too large) 0
-  Overflow Count (full) 0
-[ALLOC_TEMP_JOB_4_FRAMES (JobTemp)]
-  Initial Block Size 2,0 MB
-  Used Block Count 1
-  Overflow Count (too large) 0
-  Overflow Count (full) 0
-[ALLOC_TEMP_JOB_ASYNC (Background)]
-  Initial Block Size 1,0 MB
-  Used Block Count 1
-  Overflow Count (too large) 0
-  Overflow Count (full) 0
-[ALLOC_GFX] Dual Thread Allocator
-  Peak main deferred allocation count 0
-    [ALLOC_BUCKET]
-      Large Block size 32,0 MB
-      Used Block count 1
-      Peak Allocated bytes 6,5 MB
-    [ALLOC_GFX_MAIN]
-      Requested Block Size 16,0 MB
-      Peak Block count 1
-      Peak Allocated memory 4,6 MB
-      Peak Large allocation bytes 0 B
-    [ALLOC_GFX_THREAD]
-      Requested Block Size 16,0 MB
-      Peak Block count 0
-      Peak Allocated memory 0 B
-      Peak Large allocation bytes 0 B
-[ALLOC_CACHEOBJECTS] Dual Thread Allocator
-  Peak main deferred allocation count 24209
-    [ALLOC_BUCKET]
-      Large Block size 32,0 MB
-      Used Block count 1
-      Peak Allocated bytes 6,5 MB
-    [ALLOC_CACHEOBJECTS_MAIN]
-      Requested Block Size 4,0 MB
-      Peak Block count 22
-      Peak Allocated memory 81,9 MB
-      Peak Large allocation bytes 0 B
-    [ALLOC_CACHEOBJECTS_THREAD]
-      Requested Block Size 4,0 MB
-      Peak Block count 0
-      Peak Allocated memory 0 B
-      Peak Large allocation bytes 0 B
-[ALLOC_TYPETREE] Dual Thread Allocator
-  Peak main deferred allocation count 28844
-    [ALLOC_BUCKET]
-      Large Block size 32,0 MB
-      Used Block count 1
-      Peak Allocated bytes 6,5 MB
-    [ALLOC_TYPETREE_MAIN]
-      Requested Block Size 2,0 MB
-      Peak Block count 12
-      Peak Allocated memory 21,7 MB
-      Peak Large allocation bytes 0 B
-    [ALLOC_TYPETREE_THREAD]
-      Requested Block Size 2,0 MB
-      Peak Block count 0
-      Peak Allocated memory 0 B
-      Peak Large allocation bytes 0 B
-[ALLOC_PROFILER]
-  Requested Block Size 16,0 MB
-  Peak Block count 1
-  Peak Allocated memory 77,5 KB
-  Peak Large allocation bytes 0 B
-    [ALLOC_PROFILER_BUCKET]
-      Large Block size 32,0 MB
-      Used Block count 1
-      Peak Allocated bytes 304 B
-[ALLOC_PROFILER_EDITOR]
-  Requested Block Size 1,0 MB
-  Peak Block count 0
-  Peak Allocated memory 0 B
-  Peak Large allocation bytes 0 B
-    [ALLOC_PROFILER_BUCKET]
-      Large Block size 32,0 MB
-      Used Block count 1
-      Peak Allocated bytes 304 B
-##utp:{"type":"MemoryLeaks","version":2,"phase":"Immediate","time":1684573812852,"processId":41183,"allocatedMemory":62921286,"memoryLabels":[{"Default":36027},{"Permanent":18408},{"Thread":1096472},{"Manager":1190265},{"VertexData":204},{"Geometry":408},{"Particles":17856},{"VFX":768},{"Texture":74545},{"Shader":176024},{"Material":3100},{"GfxDevice":224776},{"Animation":15006},{"Audio":4508},{"Font":1792},{"FontEngine":336},{"Physics":267965},{"Physics2D":152912},{"Serialization":6238304},{"Input":59504},{"JobScheduler":584},{"GarbageCollector":1049152},{"Mono":92},{"ScriptingNativeRuntime":43520},{"BaseObject":1817122},{"Resource":1180},{"Renderer":8284},{"Transform":48},{"File":13147},{"Network":3356},{"WebCam":24},{"Culling":48},{"Terrain":1065},{"TerrainPhysics":8},{"Wind":24},{"STL":211968},{"String":41537583},{"DynamicArray":1059682},{"HashMap":1577537},{"Utility":2380859},{"Curl":1112},{"PoolAlloc":623432},{"AI":59616},{"TypeTree":2064},{"ScriptManager":1933232},{"RuntimeInitializeOnLoadManager":72},{"AncestorCache":32},{"SpriteAtlas":112},{"GI":15312},{"Unet":16},{"Director":7816},{"WebRequest":720},{"VR":45921},{"SceneManager":640},{"Video":256},{"LazyScriptCache":32},{"ManagedAttributeManager":1},{"TextureStreaming":1416},{"NativeArray":12},{"ScreenCapture":8},{"Camera":25},{"Secure":1},{"CrashReporter":968},{"SerializationCache":624},{"APIUpdating":5872},{"Subsystems":384},{"VirtualTexturing":59424},{"StaticSafetyDebugInfo":327752},{"EditorGui":8084},{"EditorUtility":104271},{"VersionControl":4},{"Undo":450},{"AssetDatabase":68508},{"AssetImporter":271475},{"RestService":5994},{"EditorGi":23712},{"ProgressiveLightmapper":10832},{"License":3144},{"UnityConnect":28584},{"Collab":641},{"Upm":1128},{"DrivenProperties":80},{"HubClient":32},{"LocalIPC":120},{"ProfilerEditor":20157},{"CoreBusinessMetrics":2703},{"AssetReference":32}]}
+  Time since last request: 20,313119 seconds.
+  path: Assets/RabbitSoldier.prefab
+  artifactKey: Guid(560b157b82e7e2c08aae04bef7305677) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RabbitSoldier.prefab using Guid(560b157b82e7e2c08aae04bef7305677) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '122668c3a4de71df1431276c4fa8706d') in 0,019141 seconds 
