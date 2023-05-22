@@ -14,22 +14,18 @@ public class EntityHostile : EntityLiving
             return false;
         }
         if (clipInfo[0].clip.name == clipAttackLeft.name) {
-            Debug.LogWarning("left");
             meleeColliderLeft.SetActive(true);
             return true;
         }
         if (clipInfo[0].clip.name == clipAttackRight.name) {
-            Debug.LogWarning("right");
             meleeColliderRight.SetActive(true);
             return true;
         }
         if (clipInfo[0].clip.name == clipAttackUp.name) {
-            Debug.LogWarning("up");
             meleeColliderUp.SetActive(true);
             return true;
         }
         if (clipInfo[0].clip.name == clipAttackDown.name) {
-            Debug.LogWarning("down");
             meleeColliderDown.SetActive(true);
             return true;
         }
