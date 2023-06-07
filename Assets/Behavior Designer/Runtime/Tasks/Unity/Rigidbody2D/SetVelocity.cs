@@ -4,7 +4,7 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
 {
     [TaskCategory("Unity/Rigidbody2D")]
     [TaskDescription("Sets the velocity of the Rigidbody2D. Returns Success.")]
-    public class SetVelocity : Action
+    public class Patrol : Action
     {
         [Tooltip("The GameObject that the task operates on. If null the task GameObject is used.")]
         public SharedGameObject targetGameObject;
@@ -14,6 +14,10 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
         private Rigidbody2D rigidbody2D;
         private GameObject prevGameObject;
 
+        public Transform[] points;
+        private int destPoint = 0;
+        private UnityEngine.AI.NavMeshAgent agent;
+
         public override void OnStart()
         {
             var currentGameObject = GetDefaultGameObject(targetGameObject.Value);
@@ -21,6 +25,21 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
                 rigidbody2D = currentGameObject.GetComponent<Rigidbody2D>();
                 prevGameObject = currentGameObject;
             }
+            agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+
+            agent.autoBraking = false;
+
+            GotoNextPoint();
+        }
+
+        void GotoNextPoint()
+        {
+            if (points.Length == 0)
+                return;
+
+         
+            agent.destination = points[destPoint].position;
+            destPoint = (destPoint + 1) % points.Length;
         }
 
         public override TaskStatus OnUpdate()
@@ -30,7 +49,8 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
                 return TaskStatus.Failure;
             }
 
-            rigidbody2D.velocity = velocity.Value;
+            if (!agent.pathPending && agent.remainingDistance < 0.5f)
+                GotoNextPoint();
 
             return TaskStatus.Success;
         }
@@ -38,7 +58,7 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
         public override void OnReset()
         {
             targetGameObject = null;
-            velocity = Vector2.zero;
+            
         }
     }
 }
