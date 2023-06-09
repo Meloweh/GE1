@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - PlayerMelee
+  - Sun
+  - Fireflies
   layers:
   - Default
   - TransparentFX
@@ -18,8 +20,8 @@ TagManager:
   - EnemyAttack
   - Alpha
   - Enemy
-  - 
-  - 
+  - Border
+  - Fireflies
   - 
   - 
   - 

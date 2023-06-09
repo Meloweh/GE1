@@ -2,15 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.Rendering.Universal;
 
 public class GameManager : MonoBehaviour
 {
     public GameObject playerPrefab;
     public GameObject cameraPrefab;
+    public Light2D sunPrefab;
+    public ParticleSystem firefliesPrefab;
+
     public static GameManager Instance { get; private set; }
 
     private CinemachineVirtualCamera virtualCamera;
     private GameObject player;
+    private Light2D sunLight;
+    private ParticleSystem fireflies;
 
     private void Awake()
     {
@@ -30,6 +36,9 @@ public class GameManager : MonoBehaviour
 
     private void SpawnPlayerAndCamera()
     {
+        sunLight = Instantiate(sunPrefab);
+        fireflies = Instantiate(firefliesPrefab);
+
         player = Instantiate(playerPrefab);
         var camera = Instantiate(cameraPrefab);
         virtualCamera = camera.GetComponent<CinemachineVirtualCamera>();
