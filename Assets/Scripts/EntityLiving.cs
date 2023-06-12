@@ -158,15 +158,32 @@ public abstract class EntityLiving : MonoBehaviour
         return walkSpeed;
     }
 
-    public void SubLife() {
+    protected virtual void OnDie() {
+        GetAnimator().SetTrigger("isDying");
+        Invoke(nameof(DestroySelf), clipDieDown.length);
+    }
+
+    public virtual void SubLife() {
         lifes--;
         if (lifes > 0) {
             GetAnimator().SetTrigger("isHurt");
 
         }
         else {
-            GetAnimator().SetTrigger("isDying");
-            Invoke(nameof(DestroySelf), clipDieDown.length);
+            OnDie();
+        }
+
+        lockedByAnimation = true;
+    }
+    
+    public void SubLifeThen(Action method) {
+        lifes--;
+        if (lifes > 0) {
+            GetAnimator().SetTrigger("isHurt");
+
+        }
+        else {
+            method.Invoke();
         }
 
         lockedByAnimation = true;
