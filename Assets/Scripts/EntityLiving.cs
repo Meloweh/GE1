@@ -4,7 +4,7 @@ using UnityEngine.UIElements;
 
 public abstract class EntityLiving : MonoBehaviour
 {
-    [SerializeField] private short lifes = 3;
+    [SerializeField] public short lifes = 3;
     [SerializeField] private AnimationClip clipHurtLeft, clipHurtRight, clipHurtUp, clipHurtDown;
     [SerializeField] private AnimationClip clipDieLeft, clipDieRight, clipDieUp, clipDieDown;
     [SerializeField] private float walkSpeed = 10f;
