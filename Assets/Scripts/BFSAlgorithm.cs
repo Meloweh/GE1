@@ -1,7 +1,4 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -17,7 +14,6 @@ public class BFSAlgorithm {
             if (tilemap.HasTile(position)) {
                 // You would replace "Walkable" and "NonWalkable" with the names of your actual layers
                 if (tilemap.gameObject.layer == LayerMask.NameToLayer("Alpha")) {
-//                    Debug.LogWarning(tilemap.gameObject.name);
                     return false;
                 }
             }
@@ -52,15 +48,12 @@ public class BFSAlgorithm {
 
         while (frontier.Count > 0) {
             Vector2Int current = frontier.Dequeue();
-            //ShuffleDirections();
-            foreach (Vector2Int dir in directions) { // directions is a list of adjacent cells (up, down, left, right)
+            foreach (Vector2Int dir in directions) {
                 Vector2Int next = current + dir;
 
-                if (!cameFrom.ContainsKey(next) && CanWalk(new Vector3Int(next.x, next.y, 0))) { // CanWalk() is a function that checks if a tile is walkable
+                if (!cameFrom.ContainsKey(next) && CanWalk(new Vector3Int(next.x, next.y, 0))) {
                     frontier.Enqueue(next);
                     cameFrom[next] = current;
-
-                    // Stop if we reached our target
                     if (next == target) {
                         break;
                     }
@@ -78,7 +71,6 @@ public class BFSAlgorithm {
             else {
                 break;
             }
-            
         }
         path.Reverse();
     }

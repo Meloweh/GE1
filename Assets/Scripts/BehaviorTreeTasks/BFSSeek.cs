@@ -142,16 +142,8 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
                 return TaskStatus.Success;
             }
             
-            //Vector2 currentPos = rigidbody2D.position + rigidbody2D.centerOfMass;
             Vector2Int currentCell = Vector2Int.RoundToInt(currentPos);
             Vector2Int targetCell = Vector2Int.RoundToInt(goalRigid2D.position);
-
-            /*if (isPathingStarting && bfs.CanWalk(currentCell)) {
-                next = Center(currentCell);
-                Debug.LogWarning("go center current: " + next.ToString());
-                isPathingStarting = false;
-                wanderingToCenterRN = true;
-            }*/
 
             if (isPathingStarting) {
                 next = prev;
@@ -160,19 +152,16 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
             }
 
             if (!bfs.CanWalk(currentCell)) {
-                Debug.LogWarning("Wall... " + bfs.CanWalk(currentCell) + " ");
-                //bfs.ShuffleDirections();
-                //bfs.Calculate(currentCell, targetCell);
-                //next = prev;
                 elapsedTime += Time.deltaTime;
                 if (elapsedTime >= timerDuration) {
-                    next = Center(currentCell + bfs.ShuffleDirections()[0]);
+                    Vector2Int dir = bfs.ShuffleDirections()[0];
+                    next = Center(currentCell + dir);
+                    Debug.LogWarning("dir: " + dir.ToString());
                     elapsedTime = 0f;
                 }
                 wanderingToCenterRN = true;
             }
             
-            //Vector2Int nextCell = Vector2Int.RoundToInt(next);
             bool isAtCenter = false;
 
             if (Vector2.Distance(currentPos, next) < 0.1f) {
@@ -188,7 +177,6 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
 
                 prev = next;
                 next = Center(bfs.Poll());
-                Debug.LogWarning("Is at center...: " + next);
 
             }
 
@@ -197,11 +185,9 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
             rigidbody2D.MovePosition(currentPos + direction * Time.fixedDeltaTime * speed);
             UpdateAnimation(direction);
             return TaskStatus.Running;
-            
         }
 
-        public override void OnReset()
-        {
+        public override void OnReset() {
             targetGameObject = null;
         }
     }
