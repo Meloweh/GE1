@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Village.unity
+    guid: 328d68ce977cf36f7bb522a8f8c1e779
+  - enabled: 1
+    path: Assets/Scenes/Monster Lair.unity
+    guid: 6672766c7bfa9a2449937a1e67fe3ca7
+  - enabled: 1
+    path: Assets/Scenes/Dragon Pit.unity
+    guid: 58fae024091a2634bb9f3d3f0fc3eeb0
   m_configObjects: {}
