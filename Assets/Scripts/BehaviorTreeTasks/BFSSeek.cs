@@ -28,10 +28,6 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
         public string isWalking;
         [Tooltip("Collider mask")]
         public LayerMask mask;
-        [Tooltip("Tilemap")]
-        public Tilemap tilemap;
-        [Tooltip("Ground Tile")]
-        public TileBase groundTile;
 
         private Rigidbody2D rigidbody2D;
         private Rigidbody2D goalRigid2D;
@@ -46,7 +42,7 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
         private SpriteRenderer spriteRenderer;
         private float timerDuration = 1f;
         private float elapsedTime = 0f;
-
+        private bool debug = false;
 
         public override void OnStart()
         {
@@ -62,6 +58,7 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
             var target = Physics2D.OverlapCircle(transform.position, outerRadius, mask);
             if (target != null) {
                 goalGameObject = target.gameObject;
+                Debug.LogWarning("Player object: " + target.name + " " + target.transform.position.ToString());
             }
             
             if (goalGameObject != null) { //TODO: ensure rigid2D
@@ -111,10 +108,6 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
                 return TaskStatus.Failure;
             }
 
-            if (goalGameObject == null) {
-                return TaskStatus.Failure;
-            }
-            
             if (goalRigid2D == null) {
                 Debug.LogWarning("goalRigid2D is null");
                 return TaskStatus.Failure;
@@ -156,7 +149,6 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
                 if (elapsedTime >= timerDuration) {
                     Vector2Int dir = bfs.ShuffleDirections()[0];
                     next = Center(currentCell + dir);
-                    Debug.LogWarning("dir: " + dir.ToString());
                     elapsedTime = 0f;
                 }
                 wanderingToCenterRN = true;
@@ -173,6 +165,10 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
                 if (!bfs.HasNext()) {
                     bfs.ShuffleDirections();
                     bfs.Calculate(currentCell, targetCell);
+                    Debug.LogWarning("no path");
+                }
+                else {
+                    Debug.LogWarning("path");
                 }
 
                 prev = next;

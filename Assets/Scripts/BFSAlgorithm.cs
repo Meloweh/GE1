@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -5,21 +6,21 @@ using UnityEngine.Tilemaps;
 public class BFSAlgorithm {
     private List<Vector2Int> path;
     private Vector2Int[] directions = { new (0, -1), new (-1, 0), new (0, 1), new (1, 0) };
-    private byte defaultLayer = 0;
 
     public bool CanWalk(Vector3Int position) {
         Tilemap[] tilemaps = UnityEngine.Object.FindObjectsOfType<Tilemap>();
-
+        bool groundHasPos = false;
         foreach (Tilemap tilemap in tilemaps) {
             if (tilemap.HasTile(position)) {
-                // You would replace "Walkable" and "NonWalkable" with the names of your actual layers
                 if (tilemap.gameObject.layer == LayerMask.NameToLayer("Alpha")) {
                     return false;
                 }
+
+                groundHasPos = true;
             }
         }
 
-        return true;
+        return groundHasPos;
     }
     
     public bool CanWalk(Vector2Int position) {
@@ -41,16 +42,17 @@ public class BFSAlgorithm {
     public void Calculate(Vector2Int start, Vector2Int target) {
         Queue<Vector2Int> frontier = new Queue<Vector2Int>();
         frontier.Enqueue(start);
-        //var maxDist = (int)(1.5f * Vector2Int.Distance(start, target));
-
         Dictionary<Vector2Int, Vector2Int> cameFrom = new Dictionary<Vector2Int, Vector2Int>();
         cameFrom[start] = start;
 
+        int counter = 0;
         while (frontier.Count > 0) {
+            if (counter++ > 100000) {
+                return;
+            }
             Vector2Int current = frontier.Dequeue();
             foreach (Vector2Int dir in directions) {
                 Vector2Int next = current + dir;
-
                 if (!cameFrom.ContainsKey(next) && CanWalk(new Vector3Int(next.x, next.y, 0))) {
                     frontier.Enqueue(next);
                     cameFrom[next] = current;
@@ -67,8 +69,7 @@ public class BFSAlgorithm {
             path.Add(currentTile);
             if (cameFrom.ContainsKey(currentTile)) {
                 currentTile = cameFrom[currentTile];
-            }
-            else {
+            } else {
                 break;
             }
         }
@@ -76,7 +77,7 @@ public class BFSAlgorithm {
     }
 
     public Vector2Int Poll() {
-        if (path.Count < 1) return Vector2Int.zero;
+        if (path == null || path.Count < 1) return Vector2Int.zero;
         Vector2Int next = path[0];
         path.RemoveAt(0);
         return next;
