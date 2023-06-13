@@ -20,6 +20,7 @@ public class Lightning : MonoBehaviour
 
         // Start the animation coroutine
         StartCoroutine(Animate());
+        Destroy(gameObject, 1);
     }
 
     private IEnumerator Animate()

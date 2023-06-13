@@ -58,7 +58,7 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
             var target = Physics2D.OverlapCircle(transform.position, outerRadius, mask);
             if (target != null) {
                 goalGameObject = target.gameObject;
-                Debug.LogWarning("Player object: " + target.name + " " + target.transform.position.ToString());
+                //Debug.LogWarning("Player object: " + target.name + " " + target.transform.position.ToString());
             }
             
             if (goalGameObject != null) { //TODO: ensure rigid2D
@@ -165,10 +165,10 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
                 if (!bfs.HasNext()) {
                     bfs.ShuffleDirections();
                     bfs.Calculate(currentCell, targetCell);
-                    Debug.LogWarning("no path");
+                    //Debug.LogWarning("no path");
                 }
                 else {
-                    Debug.LogWarning("path");
+                    //Debug.LogWarning("path");
                 }
 
                 prev = next;

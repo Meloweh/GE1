@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2a5ea5c33bb7dc5b8a2e8707d25df800
+guid: 2d1a63d55caf43ae682290130c1d1bcd
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: lightning-removebg-preview_0
+      name: ballz-removebg-preview_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 0
-        width: 8
-        height: 240
+        x: 3
+        y: 10
+        width: 9
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee98948955ab4934ead9f7f97fa45637
-      internalID: 1339813314
+      spriteID: d16363310ee2c8e038243390f490bef3
+      internalID: 78769601
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lightning-removebg-preview_1
+      name: ballz-removebg-preview_1
       rect:
         serializedVersion: 2
-        x: 37
-        y: 0
-        width: 11
-        height: 240
+        x: 14
+        y: 7
+        width: 17
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +152,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c8bb7b7ad3bf7114c9e84e2254a4f8b7
-      internalID: 9976888
+      spriteID: 1765fcd96009b52f495f9e167592f260
+      internalID: 1899475000
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lightning-removebg-preview_2
+      name: ballz-removebg-preview_2
       rect:
         serializedVersion: 2
-        x: 67
-        y: 0
+        x: 33
+        y: 4
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3b84b1edace14fc483ec21e7ab063e9
+      internalID: -679126009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ballz-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 3
         width: 26
-        height: 240
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 365fef162742ecf99bdcc5995f160889
-      internalID: -1499645347
+      spriteID: f369e9bd56d2a7b1d8bdacd90a09f83b
+      internalID: 399001111
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lightning-removebg-preview_3
+      name: ballz-removebg-preview_4
       rect:
         serializedVersion: 2
-        x: 108
-        y: 0
-        width: 36
-        height: 240
+        x: 86
+        y: 7
+        width: 18
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,20 +215,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b6ac34e05629040e198bc0f9c4de8140
-      internalID: 524729275
+      spriteID: 087cf8c9170c456558f698d9406ec425
+      internalID: -1865328164
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lightning-removebg-preview_4
+      name: ballz-removebg-preview_5
       rect:
         serializedVersion: 2
-        x: 161
-        y: 0
-        width: 48
-        height: 240
+        x: 107
+        y: 11
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,20 +236,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63f68141a640f20fe82ed1a0c4c1ca9c
-      internalID: -53690738
+      spriteID: a089d10b0319ab045ab299694f380d3a
+      internalID: 537696151
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lightning-removebg-preview_5
+      name: ballz-removebg-preview_6
       rect:
         serializedVersion: 2
-        x: 234
-        y: 0
-        width: 32
-        height: 240
+        x: 118
+        y: 7
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,20 +257,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09bba1e1d60ee9692ab60737cb7579ad
-      internalID: -815027773
+      spriteID: c42815ff78fb6fb6f977f64354d97831
+      internalID: 815453637
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lightning-removebg-preview_6
+      name: ballz-removebg-preview_7
       rect:
         serializedVersion: 2
-        x: 280
-        y: 0
-        width: 25
-        height: 240
+        x: 139
+        y: 5
+        width: 22
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,20 +278,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 541ba911396a660768cf9b08a1173f0e
-      internalID: -2060963610
+      spriteID: b9e37b06d8fb36eb190fbf1fe1639bed
+      internalID: 1526582113
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lightning-removebg-preview_7
+      name: ballz-removebg-preview_8
       rect:
         serializedVersion: 2
-        x: 323
-        y: 0
-        width: 14
-        height: 240
+        x: 164
+        y: 5
+        width: 24
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,29 +299,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d4e72421fc80316d95162e226ac6255
-      internalID: -2104683222
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lightning-removebg-preview_8
-      rect:
-        serializedVersion: 2
-        x: 355
-        y: 0
-        width: 12
-        height: 240
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a35ec3e480fbe8ba999de15b2806806d
-      internalID: -1552639187
+      spriteID: 4b883270a00cf14a0a1dc4a81bf025d9
+      internalID: -1685576753
       vertices: []
       indices: 
       edges: []
@@ -316,15 +316,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      lightning-removebg-preview_0: 1780603740
-      lightning-removebg-preview_1: 1339813314
-      lightning-removebg-preview_2: 9976888
-      lightning-removebg-preview_3: -1499645347
-      lightning-removebg-preview_4: 524729275
-      lightning-removebg-preview_5: -53690738
-      lightning-removebg-preview_6: -815027773
-      lightning-removebg-preview_7: -2060963610
-      lightning-removebg-preview_8: -2104683222
+      ballz-removebg-preview_0: 78769601
+      ballz-removebg-preview_1: 1899475000
+      ballz-removebg-preview_2: -679126009
+      ballz-removebg-preview_3: 399001111
+      ballz-removebg-preview_4: -1865328164
+      ballz-removebg-preview_5: 537696151
+      ballz-removebg-preview_6: 815453637
+      ballz-removebg-preview_7: 1526582113
+      ballz-removebg-preview_8: -1685576753
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
