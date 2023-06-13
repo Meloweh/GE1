@@ -25,7 +25,7 @@ public class LichProjectile : MonoBehaviour
     // The original position of the object
     private void Start() {
         tracerStartTimer = 0f;
-        target = targetObj.transform.position;
+        target = transform.position;//targetObj.transform.position;
         Invoke(nameof(Remove), despawnTime);
         ownRb = GetComponent<Rigidbody2D>();
         var t = Physics2D.OverlapCircle(transform.position, 100, playerMask);
