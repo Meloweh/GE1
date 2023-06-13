@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HandSource : MonoBehaviour {
+public class HandSource : Entity {
     [SerializeField] private LayerMask playerMask;
     [SerializeField] private GameObject handA, handB;
     private Hand handScriptA, handScriptB;
@@ -42,6 +42,9 @@ public class HandSource : MonoBehaviour {
 
         if (player) {
             Vector2 directionToPlayer = (Vector2)player.transform.position - ownRb.position;
+            SetDirection(directionToPlayer.normalized);
+            handScriptA.SetDirection(directionToPlayer.normalized);
+            handScriptB.SetDirection(directionToPlayer.normalized);
             float angleToPlayer = Mathf.Atan2(directionToPlayer.y, directionToPlayer.x) * Mathf.Rad2Deg;
             angleToPlayer += 90f;
             ownRb.rotation = angleToPlayer;

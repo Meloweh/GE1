@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hand : MonoBehaviour {
+public class Hand : Entity {
     [SerializeField] private AnimationClip hand, hand1;
     private Animator animator;
     private SpriteRenderer renderer;

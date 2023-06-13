@@ -48,17 +48,27 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
             if (target == null) {
                 return TaskStatus.Running;
             }
-            var targetGameComponent = target.gameObject.transform.parent;
-            if (targetGameComponent == null) {
-                Debug.Log("targetGameComponent is null");
-                return TaskStatus.Failure;
+
+            var targetEntity = target.GetComponent<Entity>();
+            Vector2 direction;
+            if (targetEntity) {
+                Entity entity = targetEntity;
+                direction = entity.GetDirection();
             }
-            EntityLiving living = targetGameComponent.GetComponent<EntityLiving>();
-            if (living == null) {
-                Debug.Log("living is null");
-                return TaskStatus.Failure;
+            else {
+                var targetGameComponent = target.gameObject.transform.parent;
+                if (targetGameComponent == null) {
+                    Debug.Log("targetGameComponent is null");
+                    return TaskStatus.Failure;
+                }
+                Entity entity = targetGameComponent.GetComponent<Entity>();
+                if (entity == null) {
+                    Debug.Log("living is null");
+                    return TaskStatus.Failure;
+                }
+                direction = entity.GetDirection();
             }
-            Vector2 direction = living.GetDirection();
+            
             ownLiving.DoHurt(direction);
             return TaskStatus.Success;
         }

@@ -1,10 +1,11 @@
 using System.Collections;
 using UnityEngine;
 
-public class Lightning : MonoBehaviour
+public class Lightning : Entity
 {
     private GameObject[] frames;
     [SerializeField] private float frameInterval = 0.5f;  // Time between frames
+    [SerializeField] private LayerMask playerMask;
 
     private int currentFrameIndex = 0;
     private int lastFrameIndex = 0;
@@ -20,7 +21,13 @@ public class Lightning : MonoBehaviour
 
         // Start the animation coroutine
         StartCoroutine(Animate());
-        Destroy(gameObject, 1);
+        Destroy(gameObject, 0.7f);
+        
+        var target = Physics2D.OverlapCircle(transform.position, 10, playerMask);
+        if (target != null) {
+            var dir = GetDirectionTo(transform.position, target.gameObject.transform.position);
+            SetDirection(dir);
+        }
     }
 
     private IEnumerator Animate()

@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public abstract class EntityLiving : MonoBehaviour
+public abstract class EntityLiving : Entity
 {
     [SerializeField] private short lifes = 3;
     [SerializeField] private AnimationClip clipHurtLeft, clipHurtRight, clipHurtUp, clipHurtDown;
@@ -15,12 +15,11 @@ public abstract class EntityLiving : MonoBehaviour
     private Rigidbody2D rigid;
     private bool lockedByAnimation;
     private bool prevHurtAnim, prevDyingAnim;
-    private Vector2 direction;
     private float minBacklash = 0.0001f;
     private Vector2 prevPos;
     private BoxCollider2D col;
     
-    public void HandleAlphaCollision() {
+    public virtual void HandleAlphaCollision() {
         
         if (GetCollider().IsTouchingLayers(alphaMask)) {
             rigid.position = prevPos;
@@ -142,9 +141,6 @@ public abstract class EntityLiving : MonoBehaviour
     public void DestroySelf() {
         Destroy(gameObject);
     }
-    public void SetDirection(Vector2 dir) {
-        this.direction = dir;
-    }
     public Animator GetAnimator() {
         if (animator == null) animator = GetComponent<Animator>();
         return animator;
@@ -192,8 +188,6 @@ public abstract class EntityLiving : MonoBehaviour
     public bool IsHurtLocked() {
         return lockedByAnimation;
     }
-    
-    
 
     public bool IsAlive() {
         return lifes > 0;
@@ -218,9 +212,5 @@ public abstract class EntityLiving : MonoBehaviour
         GetAnimator().SetFloat("Y", knockback.y);
         //GetAnimator().SetBool("isWalking", true);
         SubLife();
-    }
-
-    public Vector2 GetDirection() {
-        return direction;
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LichProjectile : MonoBehaviour
+public class LichProjectile : Entity
 {
     [SerializeField] private GameObject targetObj;  // Object to circle around
     [SerializeField] private float speed = 5f, speed2 = 8f;   // Speed of rotation
@@ -48,15 +48,17 @@ public class LichProjectile : MonoBehaviour
     private void Update() {
         tracerStartTimer += Time.deltaTime;
         CircleAroundTarget();
+        var dir = GetDirectionTo(target, player.transform.position);
         if (tracerStartTimer > tracerStart) {
             //transform.position += GetDirectionTo(player.transform.position) * 4;
             //amplitude = 0.5f;
             //radiusA = 0.5f;
             //radiusB = 0.8f;
             if (Vector2.Distance(target, player.transform.position) > 0.5f) {
-                target += GetDirectionTo(target, player.transform.position) * 0.01f;
+                target += dir * 0.01f;
             }
         }
+        SetDirection(dir);
     }
 
     private void CircleAroundTarget()
