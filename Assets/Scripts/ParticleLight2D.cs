@@ -20,21 +20,17 @@ public class ParticleLight2D : MonoBehaviour {
     }
 
     void Update() {
-        try {
-            var particleCount = particleSystem.GetParticles(particles);
-            for (int i = 0; i < lights.Length; i++) {
-                if (i < particleCount) {
-                    lights[i].SetActive(true);
-                    lights[i].transform.position = particles[i].position;
-                    Light2D light2D = lights[i].GetComponent<Light2D>();
-                    light2D.pointLightOuterRadius = particles[i].GetCurrentSize(particleSystem) * 2.5f;
-                } else {
-                    lights[i].SetActive(false);
-                }
+        var particleCount = particleSystem.GetParticles(particles);
+        for (int i = 0; i < lights.Length; i++) {
+            if (lights[i] == null) lights[i] = Instantiate(lightPrefab, Vector3.zero, Quaternion.identity);
+            if (i < particleCount) {
+                lights[i].SetActive(true);
+                lights[i].transform.position = particles[i].position;
+                Light2D light2D = lights[i].GetComponent<Light2D>();
+                light2D.pointLightOuterRadius = particles[i].GetCurrentSize(particleSystem) * 2.5f;
+            } else {
+                lights[i].SetActive(false);
             }
-        }
-        catch (ArgumentNullException) {
-            // particleSystem.GetParticles returns null
         }
     }
 }

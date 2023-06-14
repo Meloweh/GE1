@@ -48,7 +48,7 @@ MonoBehaviour:
   playerPrefab: {fileID: 8623363431838907585, guid: 59d8e86edb7e4b14aa20c167ca72c090, type: 3}
   cameraPrefab: {fileID: 2236420589582282095, guid: 51f215acfb4af8f958900c5e0beed0fc, type: 3}
   sunPrefab: {fileID: 7065519384290140823, guid: 91e3b33d1b383844e9de4119484f271f, type: 3}
-  firefliesPrefab: {fileID: 4544188487739538358, guid: cbe67db085a653a43b17358dc72d201a, type: 3}
+  firefliesPrefab: {fileID: 737552512732534554, guid: cbe67db085a653a43b17358dc72d201a, type: 3}
 --- !u!114 &6749962027812207994
 MonoBehaviour:
   m_ObjectHideFlags: 0
