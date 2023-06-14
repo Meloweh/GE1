@@ -16,12 +16,15 @@ public class HandSource : Entity {
         ownRb = GetComponent<Rigidbody2D>();
         handScriptA = handA.GetComponent<Hand>();
         handScriptB = handB.GetComponent<Hand>();
-
     }
 
     public void Replay() {
-        canReplay = true;
         player = null;
+        canReplay = true;
+    }
+
+    public bool IsPlaying() {
+        return handA.activeSelf || handB.activeSelf || canReplay;
     }
 
     // Update is called once per frame
@@ -29,10 +32,18 @@ public class HandSource : Entity {
     {
         if (player == null) {
             var target = Physics2D.OverlapCircle(transform.position, 100, playerMask);
-            if (target != null && target.gameObject != null) player = target.gameObject;
+            if (target != null && target.gameObject != null) {
+                player = target.gameObject;
+            }
+            else {
+                handA.SetActive(false);
+                handB.SetActive(false);
+                canReplay = false;
+            }
         }
         if (canReplay) {
             if (player != null) {
+                Debug.Log("hand set active");
                 handA.SetActive(true);
                 handB.SetActive(true);
             }

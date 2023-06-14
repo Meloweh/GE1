@@ -20,6 +20,7 @@ public class Hand : Entity {
         animator = GetComponent<Animator>();
         renderer = GetComponent<SpriteRenderer>();
         collider = GetComponent<PolygonCollider2D>();
+
     }
 
     public bool IsPlaying() {
@@ -28,7 +29,7 @@ public class Hand : Entity {
 
     void Update() {
         bool active = IsClipPlaying(hand) && GetCurrentAnimatorTime() > 0.58f;
-        //Debug.Log("IsClipPlaying(hand): " + IsClipPlaying(hand) + " RemainingPercentageTime(hand): " + (GetCurrentAnimatorTime() > 0.48f) + " = " + active);
+//        Debug.Log("IsClipPlaying(hand): " + IsClipPlaying(hand) + " RemainingPercentageTime(hand): " + (GetCurrentAnimatorTime() > 0.48f) + " = " + active);
         collider.enabled = active;
         renderer.flipX = IsClipPlaying(hand1);
         gameObject.SetActive(IsPlaying());

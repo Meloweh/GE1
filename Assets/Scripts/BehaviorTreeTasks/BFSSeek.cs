@@ -28,6 +28,19 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
         public string isWalking;
         [Tooltip("Collider mask")]
         public LayerMask mask;
+        [Tooltip("Should the wait be randomized?")]
+        public SharedBool randomWait = false;
+        [Tooltip("The minimum wait time if random wait is enabled")]
+        public SharedFloat randomWaitMin = 1;
+        [Tooltip("The maximum wait time if random wait is enabled")]
+        public SharedFloat randomWaitMax = 1;
+
+        // The time to wait
+        private float waitDuration;
+        // The time that the task started to wait.
+        private float startTime;
+        // Remember the time that the task is paused so the time paused doesn't contribute to the wait time.
+        private float pauseTime;
 
         private Rigidbody2D rigidbody2D;
         private Rigidbody2D goalRigid2D;
@@ -53,6 +66,11 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
                 entityLiving = GetComponent<EntityLiving>();
                 prev = Center(Vector2Int.RoundToInt(rigidbody2D.position));
                 spriteRenderer = GetComponent<SpriteRenderer>();
+            }
+            
+            startTime = Time.time;
+            if (randomWait.Value) {
+                waitDuration = UnityEngine.Random.Range(randomWaitMin.Value, randomWaitMax.Value);
             }
             
             var target = Physics2D.OverlapCircle(transform.position, outerRadius, mask);
@@ -94,6 +112,12 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
         
         public override TaskStatus OnUpdate()
         {
+            // The task is done waiting if the time waitDuration has elapsed since the task was started.
+            if (startTime + waitDuration < Time.time) {
+                UpdateAnimation(Vector2.zero);
+                return TaskStatus.Success;
+            }
+            
             if (rigidbody2D == null) {
                 Debug.LogWarning("Rigidbody2D is null");
                 return TaskStatus.Failure;

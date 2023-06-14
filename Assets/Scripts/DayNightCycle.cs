@@ -17,8 +17,8 @@ public class DayNightCycle : MonoBehaviour
     public float minIntensity = 0.1f;
     public float transitionSpeed = 0.01f;
 
-    public float timeOfDay; // Zwischen 0 und 1, repräsentiert den Fortschritt des Tages.
-    public int dayCount; // Zählt die vergangenen Tage.
+    public float timeOfDay; // Zwischen 0 und 1, reprï¿½sentiert den Fortschritt des Tages.
+    public int dayCount; // Zï¿½hlt die vergangenen Tage.
 
     private ParticleSystem rain;
     private ParticleSystem ripples;
@@ -57,6 +57,9 @@ public class DayNightCycle : MonoBehaviour
         if (player == null)
         {
             player = GameObject.FindWithTag("Player");
+        }
+
+        if (player != null) {
             rain = player.transform.Find("Raindrops").GetComponent<ParticleSystem>();
             ripples = player.transform.Find("Rainripples").GetComponent<ParticleSystem>();
             playerLight = player.transform.Find("PlayerLight").GetComponent<Light2D>();
@@ -79,7 +82,7 @@ public class DayNightCycle : MonoBehaviour
             }
         }
 
-        // Ändert das globale Licht abhängig von der Tageszeit
+        // ï¿½ndert das globale Licht abhï¿½ngig von der Tageszeit
         if (timeOfDay < 5f / 24f || timeOfDay > 20f / 24f)
         {
             // Nacht
@@ -91,13 +94,13 @@ public class DayNightCycle : MonoBehaviour
         }
         else if (timeOfDay < 6f / 24f)
         {
-            // Frühe Dämmerung
+            // Frï¿½he Dï¿½mmerung
             if (fireflySystem.isPlaying) fireflySystem.Stop();
             globalLight.color = Color.Lerp(globalLight.color, dawnColor, transitionSpeed * Time.deltaTime);
         }
         else if (timeOfDay < 8f / 24f)
         {
-            // Späte Dämmerung
+            // Spï¿½te Dï¿½mmerung
             globalLight.color = Color.Lerp(globalLight.color, dawnColor, transitionSpeed * Time.deltaTime);
             playerLight.intensity = Mathf.Lerp(playerLight.intensity, minIntensity, transitionSpeed * Time.deltaTime);
         }
@@ -110,25 +113,25 @@ public class DayNightCycle : MonoBehaviour
         }
         else if (timeOfDay < 19f / 24f)
         {
-            // Frühe Dämmerung
+            // Frï¿½he Dï¿½mmerung
             globalLight.color = Color.Lerp(globalLight.color, duskColor, transitionSpeed * Time.deltaTime);
             playerLight.intensity = Mathf.Lerp(playerLight.intensity, minIntensity, transitionSpeed * Time.deltaTime);
         }
         else if (timeOfDay < 20f / 24f)
         {
-            // Späte Dämmerung
+            // Spï¿½te Dï¿½mmerung
             globalLight.color = Color.Lerp(globalLight.color, duskColor, transitionSpeed * Time.deltaTime);
             playerLight.intensity = Mathf.Lerp(playerLight.intensity, minIntensity, transitionSpeed * Time.deltaTime);
         }
     }
 
-    // Gibt die aktuelle Uhrzeit als String zurück, im Format HH:MM.
+    // Gibt die aktuelle Uhrzeit als String zurï¿½ck, im Format HH:MM.
     public string GetTime()
     {
         return string.Format("{0:00}:{1:00}", Mathf.FloorToInt(timeOfDay * 24), Mathf.FloorToInt((timeOfDay * 24 * 60) % 60));
     }
 
-    // Gibt den aktuellen Tag als Integer zurück.
+    // Gibt den aktuellen Tag als Integer zurï¿½ck.
     public int GetDay()
     {
         return dayCount;
