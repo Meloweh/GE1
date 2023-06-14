@@ -4838,4 +4838,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7126dc62dc2ba8727a6f89b85d696ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightPrefab: {fileID: 7221907114011019575, guid: 2c82e0bc25b5dd7438cad17dcf173f90, type: 3}
+  lightPrefab: {fileID: 7991924613350605023, guid: 2c82e0bc25b5dd7438cad17dcf173f90, type: 3}
