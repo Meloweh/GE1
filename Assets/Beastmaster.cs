@@ -19,15 +19,24 @@ public class Beastmaster : EntityLiving
     public GameObject continueButton;
     public float wordSpeed;
     public bool playerIsClose;
-    //private bool isTalking = false;
 
     private Coroutine movingCoroutine;
-    //private float startTime;
+
+    public Button dialogueOption1;
+    public Button dialogueOption2;
+    public List<string> dialogueOption1Response;
+    public List<string> dialogueOption2Response;
+
+    private int optionResponseIndex = 0;
+    private List<string> currentOptionResponse;
 
     void Start()
     {
         base.Start();
         movingCoroutine = StartCoroutine(MoveToNextPoint());
+
+        dialogueOption1.GetComponentInChildren<TextMeshProUGUI>().text = "Ask about the Vampire City";
+        dialogueOption2.GetComponentInChildren<TextMeshProUGUI>().text = "Ask about the powerful Lich";
     }
 
     private void Update()
@@ -66,6 +75,7 @@ public class Beastmaster : EntityLiving
             movingCoroutine = StartCoroutine(MoveToNextPoint());
         }
     }
+
 
     IEnumerator MoveToNextPoint()
     {
@@ -122,16 +132,34 @@ public class Beastmaster : EntityLiving
     public void NextLine()
     {
         continueButton.SetActive(false);
+        dialogueText.text = "";
 
-        if (index < points[currentPoint].GetComponent<DialogueWP>().dialogues.Count - 1)
+        // Check if we are currently in a dialogue option response
+        if (currentOptionResponse != null)
         {
-            index++;
-            dialogueText.text = "";
-            StartCoroutine(Typing());
+            // If there are more lines in the dialogue option response
+            if (optionResponseIndex < currentOptionResponse.Count)
+            {
+                StartCoroutine(TypingOptionResponse(currentOptionResponse));
+            }
+            else
+            {
+                zeroText();
+                currentOptionResponse = null;
+                optionResponseIndex = 0;
+            }
         }
         else
         {
-            zeroText();
+            if (index < points[currentPoint].GetComponent<DialogueWP>().dialogues.Count - 1)
+            {
+                index++;
+                StartCoroutine(Typing());
+            }
+            else
+            {
+                zeroText();
+            }
         }
     }
 
@@ -151,5 +179,34 @@ public class Beastmaster : EntityLiving
             zeroText();
         }
     }
-}
 
+    public void OnDialogueOption1Selected()
+    {
+        currentOptionResponse = dialogueOption1Response;
+        optionResponseIndex = 0;
+        dialogueText.text = "";
+        StartCoroutine(TypingOptionResponse(currentOptionResponse));
+    }
+
+    public void OnDialogueOption2Selected()
+    {
+        currentOptionResponse = dialogueOption2Response;
+        optionResponseIndex = 0;
+        dialogueText.text = "";
+        StartCoroutine(TypingOptionResponse(currentOptionResponse));
+    }
+
+    IEnumerator TypingOptionResponse(List<string> dialogueOptionResponse)
+    {
+        foreach (char letter in dialogueOptionResponse[optionResponseIndex].ToCharArray())
+        {
+            dialogueText.text += letter;
+            yield return new WaitForSeconds(wordSpeed);
+        }
+
+        // increment the option response index
+        optionResponseIndex++;
+        // show continue button if there are more lines in the dialogue option response
+        continueButton.SetActive(optionResponseIndex < dialogueOptionResponse.Count);
+    }
+}
