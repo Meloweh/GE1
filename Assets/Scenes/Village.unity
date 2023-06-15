@@ -1072,7 +1072,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3761650957279688477}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.789488, y: -7.9055357, z: 0}
+  m_LocalPosition: {x: -21.789488, y: -14.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1081,7 +1081,7 @@ Transform:
   - {fileID: 3761650957661046367}
   - {fileID: 3761650957282836037}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3761650957279688475
 SpriteRenderer:
@@ -1149,7 +1149,7 @@ GameObject:
   - component: {fileID: 3761650957279688473}
   - component: {fileID: 3761650957279688478}
   - component: {fileID: 3761650957279688479}
-  - component: {fileID: 6261887965140655371}
+  - component: {fileID: 3761650957279688480}
   m_Layer: 0
   m_Name: Vampire
   m_TagString: Untagged
@@ -1211,10 +1211,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.004901886, y: -0.012975693}
+  m_Offset: {x: 0.004901886, y: -0.284842}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1225,8 +1225,43 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.42132568, y: 0.37617683}
+  m_Size: {x: 0.42132568, y: 0.43812084}
   m_EdgeRadius: 0
+--- !u!114 &3761650957279688480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3761650957279688477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 250bca755d154d321be80e80459618cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifes: 3
+  clipHurtLeft: {fileID: 7400000, guid: dfb95f74cd86caf479e4b620a27840ce, type: 2}
+  clipHurtRight: {fileID: 7400000, guid: 4b3e654e0cb48114fa7fc94340b29a18, type: 2}
+  clipHurtUp: {fileID: 7400000, guid: 356b0275096cfb449aada1c9243ec208, type: 2}
+  clipHurtDown: {fileID: 7400000, guid: 0fc61fefe929fca459d8b7225219b3b9, type: 2}
+  clipDieLeft: {fileID: 7400000, guid: 86601461f2df1bc49940b6fff784f641, type: 2}
+  clipDieRight: {fileID: 7400000, guid: 954754b6c92ca0644a6023e41a09c74a, type: 2}
+  clipDieUp: {fileID: 7400000, guid: 051df0e630f34b841bd66f2ca77ecab9, type: 2}
+  clipDieDown: {fileID: 7400000, guid: ee64f38d7a6e9fd4eb2da80c087ebdc4, type: 2}
+  walkSpeed: 10
+  alphaMask:
+    serializedVersion: 2
+    m_Bits: 0
+  clipAttackLeft: {fileID: 7400000, guid: 8a027f15ff2a9264ca0922810778f625, type: 2}
+  clipAttackRight: {fileID: 7400000, guid: 2dd7314c7aab13747a6de6106074893f, type: 2}
+  clipAttackUp: {fileID: 7400000, guid: dda11b4be4b575140894e7505c5e8a04, type: 2}
+  clipAttackDown: {fileID: 7400000, guid: 7a63f911aada7854fb23c0a6a0df55f3, type: 2}
+  meleeColliderLeft: {fileID: 3761650957661046365}
+  meleeColliderRight: {fileID: 3761650957282836059}
+  meleeColliderUp: {fileID: 3761650957199746805}
+  meleeColliderDown: {fileID: 3761650957426945800}
+  batPrefab: {fileID: 5729539526770394952, guid: 77681a1784c0dd94cb2067948031b693, type: 3}
+  spawnPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &3761650957282836037
 Transform:
   m_ObjectHideFlags: 0
@@ -1444,7 +1479,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4567259139128016186, guid: 75894f0916155c90eb863dc6edb84378, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4567259139128016186, guid: 75894f0916155c90eb863dc6edb84378, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1509,7 +1544,7 @@ PrefabInstance:
       objectReference: {fileID: 6465026629201944956}
     - target: {fileID: 2236420589582282089, guid: 51f215acfb4af8f958900c5e0beed0fc, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2236420589582282089, guid: 51f215acfb4af8f958900c5e0beed0fc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1557,39 +1592,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51f215acfb4af8f958900c5e0beed0fc, type: 3}
---- !u!114 &6261887965140655371
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3761650957279688477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2649cd3ea397b5742a3c8bbeb10a74d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifes: 1
-  clipHurtLeft: {fileID: 7400000, guid: ef4e8afb72641474fa971560e1e35971, type: 2}
-  clipHurtRight: {fileID: 7400000, guid: d3b2bdb02ffcd104292cff9c0e6f927e, type: 2}
-  clipHurtUp: {fileID: 7400000, guid: 59b629d76f7a42940ab2bb958aaeb6a2, type: 2}
-  clipHurtDown: {fileID: 7400000, guid: 2ab8cb9dcfc9a7342af4bcbcc209d099, type: 2}
-  clipDieLeft: {fileID: 7400000, guid: f44e32545d8b7474389ef7b1078fc072, type: 2}
-  clipDieRight: {fileID: 7400000, guid: 1224464272063c84a8fc91c37a97f3dc, type: 2}
-  clipDieUp: {fileID: 7400000, guid: 5a6c3a257caa1e84c828d73f5a0044f2, type: 2}
-  clipDieDown: {fileID: 7400000, guid: 581b12428fee81a448411eb78f929b14, type: 2}
-  walkSpeed: 10
-  alphaMask:
-    serializedVersion: 2
-    m_Bits: 1024
-  clipAttackLeft: {fileID: 7400000, guid: 5c5e63a6d9101b946bdf112c9711724e, type: 2}
-  clipAttackRight: {fileID: 7400000, guid: 279dbb3febd512540a432c1c148b712a, type: 2}
-  clipAttackUp: {fileID: 7400000, guid: 2c002e80709d18b4b9271907cb3a4c7f, type: 2}
-  clipAttackDown: {fileID: 7400000, guid: d8b896abc8824274ca26561642e8ca16, type: 2}
-  meleeColliderLeft: {fileID: 3761650957661046365}
-  meleeColliderRight: {fileID: 3761650957282836059}
-  meleeColliderUp: {fileID: 3761650957199746805}
-  meleeColliderDown: {fileID: 3761650957426945800}
 --- !u!1 &6465026629201944945
 GameObject:
   m_ObjectHideFlags: 0
@@ -1784,7 +1786,7 @@ Transform:
   - {fileID: 9001182582408096010}
   - {fileID: 9001182581474277161}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &6465026629201944957
 Animator:
@@ -2191,7 +2193,7 @@ Transform:
   - {fileID: 6474883328910689272}
   - {fileID: 6474883329558510562}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &6474883329553265342
 Rigidbody2D:

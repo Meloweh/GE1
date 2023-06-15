@@ -171,6 +171,7 @@ public abstract class EntityLiving : MonoBehaviour
         }
         else {
             OnDie();
+            
         }
 
         lockedByAnimation = true;
