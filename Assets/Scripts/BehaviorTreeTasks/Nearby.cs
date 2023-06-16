@@ -34,7 +34,7 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
 
             var target = Physics2D.OverlapCircle(transform.position, radius, mask);
             
-            return target != null ? TaskStatus.Success : TaskStatus.Failure;
+            return target != null ? TaskStatus.Success : TaskStatus.Running;
         }
 
         public override void OnReset()

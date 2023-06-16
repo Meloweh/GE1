@@ -114,6 +114,14 @@ public abstract class EntityLiving : Entity
     private protected void FixedUpdate() {
         if (lockedByAnimation) {
             bool currHurtAnim = IsClipPlaying_Hurt();
+            if(currHurtAnim && gameObject.name != "Lich") {
+                for (int i = 0; i < transform.childCount; i++) {
+                    var go = transform.GetChild(i).gameObject;
+                    if (go.name == "Collider" || go.name == "ColliderLeft" || go.name == "ColliderRight" || go.name == "ColliderUp" || go.name == "ColliderDown") {
+                        go.SetActive(false);
+                    }
+                }
+            }
             if (prevHurtAnim && !currHurtAnim) {
                 lockedByAnimation = false;
                 movement = Vector2.zero;

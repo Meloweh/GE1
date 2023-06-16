@@ -18,14 +18,14 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
         public float outerRadius;
         [Tooltip("Walk animation")]
         public bool shouldAnimate;
-        [Tooltip("Animator")]
-        public Animator animator;
-        [Tooltip("X blend")]
-        public string x;
-        [Tooltip("Y blend")]
-        public string y;
-        [Tooltip("Walk blend")]
-        public string isWalking;
+        //[Tooltip("Animator")]
+        //public Animator animator;
+        //[Tooltip("X blend")]
+        private string x = "X";
+        //[Tooltip("Y blend")]
+        private string y = "Y";
+        //[Tooltip("Walk blend")]
+        private string isWalking = "isWalking";
         [Tooltip("Collider mask")]
         public LayerMask mask;
         [Tooltip("Should the wait be randomized?")]
@@ -54,6 +54,7 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
         private SpriteRenderer spriteRenderer;
         private float timerDuration = 1f;
         private float elapsedTime = 0f;
+        private Animator animator;
 
         public override void OnStart()
         {
@@ -64,6 +65,7 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
                 entityLiving = GetComponent<EntityLiving>();
                 prev = Center(Vector2Int.RoundToInt(rigidbody2D.position));
                 spriteRenderer = GetComponent<SpriteRenderer>();
+                animator = GetComponent<Animator>();
             }
             
             startTime = Time.time;
@@ -109,13 +111,7 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
         }
         
         public override TaskStatus OnUpdate()
-        {
-            // The task is done waiting if the time waitDuration has elapsed since the task was started.
-            if (startTime + waitDuration < Time.time) {
-                UpdateAnimation(Vector2.zero);
-                return TaskStatus.Success;
-            }
-            
+        {           
             if (rigidbody2D == null) {
                 Debug.LogWarning("Rigidbody2D is null");
                 return TaskStatus.Failure;
@@ -144,7 +140,19 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
                 Debug.LogWarning("spriteRenderer is null");
                 return TaskStatus.Failure;
             }
-            
+
+            if (animator == null) {
+                Debug.LogWarning("animator is null");
+                return TaskStatus.Failure;
+            }
+
+            // The task is done waiting if the time waitDuration has elapsed since the task was started.
+            if (randomWait.Value && (startTime + waitDuration < Time.time))
+            {
+                UpdateAnimation(Vector2.zero);
+                return TaskStatus.Success;
+            }
+
             Vector2 currentPos = rigidbody2D.position;
 
             float distToTarget = Vector2.Distance(rigidbody2D.position, goalRigid2D.position);

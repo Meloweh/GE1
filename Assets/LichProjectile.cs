@@ -32,6 +32,7 @@ public class LichProjectile : Entity
             player = t.gameObject;
         }
         else {
+            Debug.Log("No player nearby");
             player = targetObj;
         }
     }
@@ -39,15 +40,16 @@ public class LichProjectile : Entity
     private void Update() {
         tracerStartTimer += Time.deltaTime;
         CircleAroundTarget();
-        if (target == null) return; 
-        var dir = GetDirectionTo(target, player.transform.position);
+        if (target == null) return;
+        var playerPos = player != null ? player.transform.position : target;
+        var dir = GetDirectionTo(target, playerPos);
         if (tracerStartTimer > tracerStart) {
             //transform.position += GetDirectionTo(player.transform.position) * 4;
             //amplitude = 0.5f;
             //radiusA = 0.5f;
             //radiusB = 0.8f;
-            if (Vector2.Distance(target, player.transform.position) > 0.5f) {
-                target += dir * 0.01f;
+            if (Vector2.Distance(target, playerPos) > 0.5f) {
+                target += dir * Time.deltaTime * 3.5f;
             }
         }
         SetDirection(dir);

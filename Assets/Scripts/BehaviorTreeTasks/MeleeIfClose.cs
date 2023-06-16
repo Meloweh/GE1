@@ -42,7 +42,7 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
                 return TaskStatus.Failure;
             }
             if (target == null) {
-                Debug.Log("Target to far");
+                //Debug.Log("Target to far");
                 return TaskStatus.Failure;
             }
             if (scriptHandSource.IsPlaying()) {
