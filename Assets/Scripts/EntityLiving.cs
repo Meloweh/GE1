@@ -175,6 +175,7 @@ public abstract class EntityLiving : Entity
         }
         else {
             OnDie();
+            
         }
 
         lockedByAnimation = true;
