@@ -28,9 +28,11 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
                 entityHostile.SetMelee();
             }
             target = Physics2D.OverlapCircle(transform.position, 2.5f, playerMask);
-            handSource.SetActive(true);
-            scriptHandSource = handSource.GetComponent<HandSource>();
-            scriptHandSource.Replay();
+            if (target) {
+                handSource.SetActive(true);
+                scriptHandSource = handSource.GetComponent<HandSource>();
+                scriptHandSource.Replay();
+            }
         }
 
         public override TaskStatus OnUpdate()
@@ -39,7 +41,6 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
                 Debug.LogWarning("entityHostile is null");
                 return TaskStatus.Failure;
             }
-            
             if (target == null) {
                 Debug.Log("Target to far");
                 return TaskStatus.Failure;

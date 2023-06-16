@@ -51,11 +51,9 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
         private Vector2 next;
         private bool isPathingStarting;
         private Vector2 prev = Vector2.zero;
-        private bool wanderingToCenterRN;
         private SpriteRenderer spriteRenderer;
         private float timerDuration = 1f;
         private float elapsedTime = 0f;
-        private bool debug = false;
 
         public override void OnStart()
         {
@@ -165,7 +163,6 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
             if (isPathingStarting) {
                 next = prev;
                 isPathingStarting = false;
-                wanderingToCenterRN = true;
             }
 
             if (!bfs.CanWalk(currentCell)) {
@@ -175,15 +172,9 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
                     next = Center(currentCell + dir);
                     elapsedTime = 0f;
                 }
-                wanderingToCenterRN = true;
             }
             
-            bool isAtCenter = false;
-
-            if (Vector2.Distance(currentPos, next) < 0.1f) {
-                wanderingToCenterRN = false;
-                isAtCenter = true;
-            }
+            bool isAtCenter = Vector2.Distance(currentPos, next) < 0.1f;
 
             if (isAtCenter && bfs.CanWalk(currentCell)) {
                 if (!bfs.HasNext()) {

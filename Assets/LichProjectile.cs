@@ -11,7 +11,6 @@ public class LichProjectile : Entity
     [SerializeField] private float magnitude = 0.1f;
     [SerializeField] private float tracerStart = 2.5f;
     [SerializeField] private float despawnTime = 8f;
-    [SerializeField] private float traceSpeed = 1f;
     [SerializeField] private LayerMask playerMask;
     private Vector3 target;
     private float tracerStartTimer;
@@ -36,18 +35,11 @@ public class LichProjectile : Entity
             player = targetObj;
         }
     }
-    
-    private Vector3 GetDirectionTo(Vector2 source, Vector2 target) {
-        Vector2 position1 = source;
-        Vector2 position2 = target;
-        Vector2 difference = position2 - position1;
-        Vector2 direction = difference.normalized;
-        return direction;
-    }
 
     private void Update() {
         tracerStartTimer += Time.deltaTime;
         CircleAroundTarget();
+        if (target == null) return; 
         var dir = GetDirectionTo(target, player.transform.position);
         if (tracerStartTimer > tracerStart) {
             //transform.position += GetDirectionTo(player.transform.position) * 4;

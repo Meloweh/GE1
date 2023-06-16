@@ -43,7 +43,7 @@ public class HandSource : Entity {
         }
         if (canReplay) {
             if (player != null) {
-                Debug.Log("hand set active");
+                //Debug.Log("hand set active");
                 handA.SetActive(true);
                 handB.SetActive(true);
             }

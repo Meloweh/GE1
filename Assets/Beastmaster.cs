@@ -30,8 +30,7 @@ public class Beastmaster : EntityLiving
     private int optionResponseIndex = 0;
     private List<string> currentOptionResponse;
 
-    void Start()
-    {
+    public override void Start() {
         base.Start();
         movingCoroutine = StartCoroutine(MoveToNextPoint());
 
@@ -113,8 +112,7 @@ public class Beastmaster : EntityLiving
         }
     }
 
-    public void SetDirection(Vector2 dir)
-    {
+    public override void SetDirection(Vector2 dir) {
         this.moveDirection = dir;
         GetAnimator().SetFloat("X", dir.x);
         GetAnimator().SetFloat("Y", dir.y);

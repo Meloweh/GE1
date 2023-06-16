@@ -9,9 +9,6 @@ public class PlayerMovement : EntityHostile {
     [SerializeField] private Sprite face;
     [SerializeField] private DialogManager dialogManager;
     private Dialog dialog;
-    void Start() {
-
-    }
 
     private void OnMovement(InputValue iv) {
         if (IsHurtLocked()) {
@@ -34,9 +31,9 @@ public class PlayerMovement : EntityHostile {
             isAttacking = true;
         }
 
-        if (Input.GetKeyUp(KeyCode.U) && !DialogManager.instance.IsBusy()) {
+        /*if (Input.GetKeyUp(KeyCode.U) && !DialogManager.instance.IsBusy()) {
             DoSampleDialog();
-        }
+        }*/
     }
 
     private protected new void FixedUpdate() {

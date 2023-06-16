@@ -87,7 +87,7 @@ public abstract class EntityLiving : Entity
     }
 
     // Start is called before the first frame update
-    public void Start()
+    public virtual void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();

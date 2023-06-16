@@ -5,19 +5,7 @@ using UnityEngine;
 public class Entity : MonoBehaviour
 {
     protected Vector2 direction;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    
-    public void SetDirection(Vector2 dir) {
+    public virtual void SetDirection(Vector2 dir) {
         this.direction = dir;
     }
     

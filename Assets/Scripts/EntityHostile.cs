@@ -41,11 +41,16 @@ public class EntityHostile : EntityLiving
     public void SetMelee() {
         GetAnimator().SetTrigger("isMelee");
     }
-    
-    // Start is called before the first frame update
-    void Start() {
+
+    public override void Start() {
+        base.Start();
         isAttacking = false;
     }
+
+    // Start is called before the first frame update
+    /*void Start() {
+        isAttacking = false;
+    }*/
 
     // Update is called once per frame
     void Update()

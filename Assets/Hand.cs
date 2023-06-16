@@ -5,8 +5,8 @@ using UnityEngine;
 public class Hand : Entity {
     [SerializeField] private AnimationClip hand, hand1;
     private Animator animator;
-    private SpriteRenderer renderer;
-    private PolygonCollider2D collider;
+    private SpriteRenderer spriteRenderer;
+    private PolygonCollider2D polygonCollider2D;
     private bool IsClipPlaying(AnimationClip clip) {
         AnimatorClipInfo[] clipInfo = animator.GetCurrentAnimatorClipInfo(0);
         return clipInfo.Length > 0 && clipInfo[0].clip.name == clip.name;
@@ -18,8 +18,8 @@ public class Hand : Entity {
     }
     void Start() {
         animator = GetComponent<Animator>();
-        renderer = GetComponent<SpriteRenderer>();
-        collider = GetComponent<PolygonCollider2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        polygonCollider2D = GetComponent<PolygonCollider2D>();
 
     }
 
@@ -30,8 +30,8 @@ public class Hand : Entity {
     void Update() {
         bool active = IsClipPlaying(hand) && GetCurrentAnimatorTime() > 0.58f;
 //        Debug.Log("IsClipPlaying(hand): " + IsClipPlaying(hand) + " RemainingPercentageTime(hand): " + (GetCurrentAnimatorTime() > 0.48f) + " = " + active);
-        collider.enabled = active;
-        renderer.flipX = IsClipPlaying(hand1);
+        polygonCollider2D.enabled = active;
+        spriteRenderer.flipX = IsClipPlaying(hand1);
         gameObject.SetActive(IsPlaying());
     }
 }
