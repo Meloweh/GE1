@@ -318,8 +318,8 @@ MonoBehaviour:
         byteData: 
         byteDataArray: 
       Version: 1.7.5
-  gizmoViewMode: 0
-  showBehaviorDesignerGizmo: 0
+  gizmoViewMode: 2
+  showBehaviorDesignerGizmo: 1
 --- !u!61 &4079504321435077630
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -367,7 +367,7 @@ MonoBehaviour:
   clipDieRight: {fileID: 7400000, guid: 57e4167385a7a064287394ed6235d809, type: 2}
   clipDieUp: {fileID: 7400000, guid: 98452fd11a0028a428341bd871aaf1e5, type: 2}
   clipDieDown: {fileID: 7400000, guid: 8373f747ee522534bb2447ec012625a6, type: 2}
-  walkSpeed: 10
+  walkSpeed: 5
   alphaMask:
     serializedVersion: 2
     m_Bits: 1024

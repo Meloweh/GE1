@@ -559,6 +559,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2693753246648193417, guid: c0c89d2ae604206449de26744a534517, type: 3}
+      propertyPath: walkSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2693753246648193417, guid: c0c89d2ae604206449de26744a534517, type: 3}
       propertyPath: dialogueText
       value: 
       objectReference: {fileID: 615922346}

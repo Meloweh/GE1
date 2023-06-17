@@ -20,6 +20,7 @@ public class ParticleLight2D : MonoBehaviour {
     }
 
     void Update() {
+        if (particles == null) return;
         var particleCount = ownParticleSystem.GetParticles(particles);
         for (int i = 0; i < lights.Length; i++) {
             if (lights[i] == null) lights[i] = Instantiate(lightPrefab, Vector3.zero, Quaternion.identity);

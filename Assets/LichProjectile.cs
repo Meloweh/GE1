@@ -21,7 +21,6 @@ public class LichProjectile : Entity
         Destroy(gameObject);
     }
 
-    // The original position of the object
     private void Start() {
         tracerStartTimer = 0f;
         target = transform.position;//targetObj.transform.position;
@@ -57,7 +56,6 @@ public class LichProjectile : Entity
 
     private void CircleAroundTarget()
     {
-        // Calculate the new position of the moving object
         float x = target.x + radiusA * Mathf.Cos(Time.time * speed) + Random.Range(-1f, 1f) * magnitude;
         float y = target.y + radiusB * Mathf.Sin(Time.time * speed2) + amplitude * Mathf.Sin(Time.time);
         transform.position = new Vector2(x, y);

@@ -43,7 +43,7 @@ public class PlayerMovement : EntityHostile {
         }
         
         if (!isAttacking) {
-            GetRigid().MovePosition(GetRigid().position + movement * Time.fixedDeltaTime * GetWalkSpeed());
+            DoMovement(false);
         }
         isAttacking = IsAttackAnimation();
 

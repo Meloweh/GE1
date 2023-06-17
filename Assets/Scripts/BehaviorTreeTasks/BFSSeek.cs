@@ -201,7 +201,8 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityRigidbody2D
 
             Vector2 direction = GetDirectionTo(next);
             entityLiving.SetDirection(direction);
-            rigidbody2D.MovePosition(currentPos + direction * Time.fixedDeltaTime * speed);
+            //rigidbody2D.MovePosition(currentPos + direction * Time.fixedDeltaTime * speed);
+            entityLiving.DoMovement(true);
             UpdateAnimation(direction);
             return TaskStatus.Running;
         }

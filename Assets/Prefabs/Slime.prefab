@@ -433,7 +433,7 @@ MonoBehaviour:
   clipDieRight: {fileID: 7400000, guid: 61ca78c56960ab742b5541a030ce8f1a, type: 2}
   clipDieUp: {fileID: 7400000, guid: 89681497919b25fb5a0482f009bf33ed, type: 2}
   clipDieDown: {fileID: 7400000, guid: 0380c4aac61e82d52a4aebc4d9665f89, type: 2}
-  walkSpeed: 10
+  walkSpeed: 5
   alphaMask:
     serializedVersion: 2
     m_Bits: 1024

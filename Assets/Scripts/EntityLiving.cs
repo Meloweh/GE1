@@ -19,13 +19,55 @@ public abstract class EntityLiving : Entity
     private Vector2 prevPos;
     private BoxCollider2D col;
     
-    public virtual void HandleAlphaCollision() {
+    /*public virtual void HandleAlphaCollision() {
         
         if (GetCollider().IsTouchingLayers(alphaMask)) {
             rigid.position = prevPos;
         }
 
         prevPos = GetRigid().position + Vector2.zero;
+    }*/
+    
+    public virtual void HandleAlphaCollision() {
+        /*Vector2 direction = (GetRigid().position - prevPos).normalized;
+        float distance = Vector2.Distance(GetRigid().position, prevPos);
+
+        RaycastHit2D hit = Physics2D.Raycast(prevPos, direction, distance, alphaMask);
+        if (hit.collider != null) {
+            // If a collision would occur, stop the movement
+            GetRigid().position = hit.point;
+        }
+
+        prevPos = GetRigid().position;*/
+    }
+
+    private protected LayerMask GetAlphaMask() {
+        return alphaMask;
+    }
+
+    public void DoMovement(bool useDir) {
+        Vector2 orientation = useDir ? GetDirection() : movement;
+        Vector2 intendedPosition = GetRigid().position + orientation * Time.fixedDeltaTime * GetWalkSpeed();
+        Vector2 direction = orientation.normalized;
+        float distance = orientation.magnitude * Time.fixedDeltaTime * GetWalkSpeed();
+        RaycastHit2D hit = Physics2D.Raycast(GetRigid().position, direction, distance, GetAlphaMask());
+            
+        if (hit.collider != null) {
+            Vector2 adjustedMovement = GetRigid().position - hit.point;
+            GetRigid().MovePosition(GetRigid().position + adjustedMovement);
+        }else {
+            GetRigid().MovePosition(intendedPosition);
+        }
+
+        SetPrevPos(GetRigid().position);
+    }
+
+    private protected Vector2 GetPrevPos() {
+        return prevPos;
+    }
+
+    private protected void SetPrevPos(Vector2 next) {
+        prevPos = next;
     }
     
     private protected bool IsClipPlaying(AnimationClip clip) {

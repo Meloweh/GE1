@@ -178,7 +178,7 @@ MonoBehaviour:
   clipDieRight: {fileID: 0}
   clipDieUp: {fileID: 0}
   clipDieDown: {fileID: 0}
-  walkSpeed: 10
+  walkSpeed: 3
   alphaMask:
     serializedVersion: 2
     m_Bits: 0
