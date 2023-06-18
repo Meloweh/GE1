@@ -6,18 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="16e07522-83a4-48b5-ad8b-5228ab1c4bdb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GE1P/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GE1P/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LichProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LichProjectile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Beastmaster.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Beastmaster.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DeathKnight.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DeathKnight.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/RabbitSoldier.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/RabbitSoldier.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skeleton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Skeleton.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Slime.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Slime.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Vampire.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Vampire.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Village.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Village.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BehaviorTreeTasks/BFSSeek.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BehaviorTreeTasks/BFSSeek.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/EntityLiving.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EntityLiving.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ParticleLight2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ParticleLight2D.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,6 +89,8 @@
       <workItem from="1686936715867" duration="1254000" />
       <workItem from="1686939930154" duration="623000" />
       <workItem from="1687019640113" duration="5512000" />
+      <workItem from="1687027214071" duration="688000" />
+      <workItem from="1687079986080" duration="1341000" />
     </task>
     <servers />
   </component>

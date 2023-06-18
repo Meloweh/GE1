@@ -45,12 +45,12 @@ public abstract class EntityLiving : Entity
         return alphaMask;
     }
 
-    public void DoMovement(bool useDir) {
+    public void DoMovement(bool useDir, float multiplicator) {
         Vector2 orientation = useDir ? GetDirection() : movement;
-        Vector2 intendedPosition = GetRigid().position + orientation * Time.fixedDeltaTime * GetWalkSpeed();
-        Vector2 direction = orientation.normalized;
-        float distance = orientation.magnitude * Time.fixedDeltaTime * GetWalkSpeed();
-        RaycastHit2D hit = Physics2D.Raycast(GetRigid().position, direction, distance, GetAlphaMask());
+        Vector2 intendedPosition = GetRigid().position + orientation * Time.fixedDeltaTime * GetWalkSpeed() * multiplicator;
+        Vector2 dir = orientation.normalized;
+        float distance = orientation.magnitude * Time.fixedDeltaTime * GetWalkSpeed() * 1.5f;
+        RaycastHit2D hit = Physics2D.Raycast(GetRigid().position, dir, distance, GetAlphaMask());
             
         if (hit.collider != null) {
             Vector2 adjustedMovement = GetRigid().position - hit.point;
@@ -60,6 +60,10 @@ public abstract class EntityLiving : Entity
         }
 
         SetPrevPos(GetRigid().position);
+    }
+
+    public void DoMovement(bool useDir) {
+        DoMovement(useDir, 1f);
     }
 
     private protected Vector2 GetPrevPos() {
@@ -172,16 +176,18 @@ public abstract class EntityLiving : Entity
             Rigidbody2D rig = GetRigid();
             if (currHurtAnim) {
                 float fl = RemainingPercentageTime(clipHurtDown);
-                rig.MovePosition(rig.position - direction * Time.fixedDeltaTime * walkSpeed * 0.1f *
-                    (fl > minBacklash ? fl : minBacklash));
+                DoMovement(true, -0.1f * (fl > minBacklash ? fl : minBacklash));
+                //rig.MovePosition(rig.position - direction * Time.fixedDeltaTime * walkSpeed * 0.1f *
+                //    (fl > minBacklash ? fl : minBacklash));
             }
             prevHurtAnim = currHurtAnim;
 
             bool currDyingAnim = IsClipPlaying_Dying();
             float remainingDyingPercentage = RemainingPercentageTime(clipDieDown);
             if (currDyingAnim) {
-                rig.MovePosition(rig.position - direction * Time.fixedDeltaTime * walkSpeed * 0.1f * 
-                    (remainingDyingPercentage > minBacklash ? remainingDyingPercentage : minBacklash));
+                DoMovement(true, -0.1f * (remainingDyingPercentage > minBacklash ? remainingDyingPercentage : minBacklash));
+                //rig.MovePosition(rig.position - direction * Time.fixedDeltaTime * walkSpeed * 0.1f * 
+                //    (remainingDyingPercentage > minBacklash ? remainingDyingPercentage : minBacklash));
             }
             prevDyingAnim = currDyingAnim;
         }
