@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="16e07522-83a4-48b5-ad8b-5228ab1c4bdb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GE1P/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GE1P/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LichProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LichProjectile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Lightning.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Lightning.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EntityLiving.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EntityLiving.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Lich/HandController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Lich/HandController.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EntityHostile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EntityHostile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,6 +94,7 @@
       <workItem from="1687027214071" duration="688000" />
       <workItem from="1687079986080" duration="1341000" />
       <workItem from="1687083093710" duration="6268000" />
+      <workItem from="1687102517160" duration="1501000" />
     </task>
     <servers />
   </component>

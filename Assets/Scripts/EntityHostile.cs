@@ -62,16 +62,16 @@ public class EntityHostile : EntityLiving
         base.FixedUpdate();
     }
     
-    private float Sigmoid(float val) {
+    private float HardStep(float val) {
         return val > 0.5f ? 1 : val < -0.5f ? -1 : 0;
     }
 
-    private Vector2 Sigmoid(Vector2 val) {
-        return new Vector2(Sigmoid(val.x), Sigmoid(val.y));
+    private Vector2 HardStep(Vector2 val) {
+        return new Vector2(HardStep(val.x), HardStep(val.y));
     }
 
     public void SetMeleeDir() {
-        var vec = Sigmoid(GetDirection().normalized);
+        var vec = HardStep(GetDirection().normalized);
         GetAnimator().SetFloat("X", vec.x);
         GetAnimator().SetFloat("Y", vec.y);
     }
