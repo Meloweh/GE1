@@ -6,14 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="16e07522-83a4-48b5-ad8b-5228ab1c4bdb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GE1P/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GE1P/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Lich/HandController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Lich/HandController.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EntityHostile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EntityHostile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BehaviorTreeTasks/RandomPickOne.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BehaviorTreeTasks/RandomPickOne.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/588986f0ece348639a7f593b91b28f0e1ce00/97/e9937947/ParentTask.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -95,6 +97,8 @@
       <workItem from="1687079986080" duration="1341000" />
       <workItem from="1687083093710" duration="6268000" />
       <workItem from="1687102517160" duration="1501000" />
+      <workItem from="1687105820938" duration="1063000" />
+      <workItem from="1687122860722" duration="1120000" />
     </task>
     <servers />
   </component>

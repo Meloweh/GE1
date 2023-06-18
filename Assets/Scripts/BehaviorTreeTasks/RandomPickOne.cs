@@ -32,6 +32,7 @@ namespace BehaviorDesigner.Runtime.Tasks
 
             // Add the index of each child to a list to make the Fischer-Yates shuffle possible.
             childIndexList.Clear();
+            Debug.Log("Child count: " + children.Count);
             for (int i = 0; i < children.Count; ++i) {
                 childIndexList.Add(i);
             }
@@ -86,12 +87,14 @@ namespace BehaviorDesigner.Runtime.Tasks
             useSeed = false;
         }
 
-        private void ShuffleChilden()
-        {
+        private void ShuffleChilden() {
+            var next = Random.Range(0, children.Count);
+            childrenExecutionOrder.Push(next);
             // Use Fischer-Yates shuffle to randomize the child index order.
-            for (int i = childIndexList.Count; i > 0; --i) {
+            /*for (int i = childIndexList.Count; i > 0; --i) {
                 int j = Random.Range(0, i);
                 int index = childIndexList[j];
+                Debug.LogWarning(j+"");
                 childrenExecutionOrder.Push(index);
                 childIndexList[j] = childIndexList[i - 1];
                 childIndexList[i - 1] = index;
@@ -100,7 +103,7 @@ namespace BehaviorDesigner.Runtime.Tasks
 
             var candidate = childIndexList[0];
             childIndexList = new List<int>();
-            childIndexList.Add(candidate);
+            childIndexList.Add(candidate);*/
         }
     }
 }
