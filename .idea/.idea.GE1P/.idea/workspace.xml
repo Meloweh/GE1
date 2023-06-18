@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="16e07522-83a4-48b5-ad8b-5228ab1c4bdb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GE1P/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GE1P/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LichProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LichProjectile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Lightning.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Lightning.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/EntityLiving.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EntityLiving.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,6 +94,7 @@
       <workItem from="1687019640113" duration="5512000" />
       <workItem from="1687027214071" duration="688000" />
       <workItem from="1687079986080" duration="1341000" />
+      <workItem from="1687083093710" duration="6268000" />
     </task>
     <servers />
   </component>

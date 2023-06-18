@@ -43,10 +43,6 @@ public class LichProjectile : Entity
         var playerPos = player != null ? player.transform.position : target;
         var dir = GetDirectionTo(target, playerPos);
         if (tracerStartTimer > tracerStart) {
-            //transform.position += GetDirectionTo(player.transform.position) * 4;
-            //amplitude = 0.5f;
-            //radiusA = 0.5f;
-            //radiusB = 0.8f;
             if (Vector2.Distance(target, playerPos) > 0.5f) {
                 target += dir * Time.deltaTime * 3.5f;
             }
@@ -54,8 +50,7 @@ public class LichProjectile : Entity
         SetDirection(dir);
     }
 
-    private void CircleAroundTarget()
-    {
+    private void CircleAroundTarget() {
         float x = target.x + radiusA * Mathf.Cos(Time.time * speed) + Random.Range(-1f, 1f) * magnitude;
         float y = target.y + radiusB * Mathf.Sin(Time.time * speed2) + amplitude * Mathf.Sin(Time.time);
         transform.position = new Vector2(x, y);

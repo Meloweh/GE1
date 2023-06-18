@@ -17,7 +17,7 @@ public class PlayerMovement : EntityHostile {
         movement = iv.Get<Vector2>();
         UpdateMovementAnimation();
         if (movement.x != 0 || movement.y != 0) {
-            SetDirection(movement.normalized * 10);
+            SetDirection(movement.normalized);
         }
             
     }

@@ -49,16 +49,8 @@ public abstract class EntityLiving : Entity
         Vector2 orientation = useDir ? GetDirection() : movement;
         Vector2 intendedPosition = GetRigid().position + orientation * Time.fixedDeltaTime * GetWalkSpeed() * multiplicator;
         Vector2 dir = orientation.normalized;
-        float distance = orientation.magnitude * Time.fixedDeltaTime * GetWalkSpeed() * 1.5f;
-        RaycastHit2D hit = Physics2D.Raycast(GetRigid().position, dir, distance, GetAlphaMask());
-            
-        if (hit.collider != null) {
-            Vector2 adjustedMovement = GetRigid().position - hit.point;
-            GetRigid().MovePosition(GetRigid().position + adjustedMovement);
-        }else {
-            GetRigid().MovePosition(intendedPosition);
-        }
-
+        RaycastHit2D hit = Physics2D.Raycast(GetRigid().position, dir, 0.5f, GetAlphaMask());
+        if (hit.collider == null) GetRigid().MovePosition(intendedPosition);
         SetPrevPos(GetRigid().position);
     }
 
@@ -173,12 +165,9 @@ public abstract class EntityLiving : Entity
                 movement = Vector2.zero;
             }
             
-            Rigidbody2D rig = GetRigid();
             if (currHurtAnim) {
                 float fl = RemainingPercentageTime(clipHurtDown);
                 DoMovement(true, -0.1f * (fl > minBacklash ? fl : minBacklash));
-                //rig.MovePosition(rig.position - direction * Time.fixedDeltaTime * walkSpeed * 0.1f *
-                //    (fl > minBacklash ? fl : minBacklash));
             }
             prevHurtAnim = currHurtAnim;
 
@@ -186,8 +175,6 @@ public abstract class EntityLiving : Entity
             float remainingDyingPercentage = RemainingPercentageTime(clipDieDown);
             if (currDyingAnim) {
                 DoMovement(true, -0.1f * (remainingDyingPercentage > minBacklash ? remainingDyingPercentage : minBacklash));
-                //rig.MovePosition(rig.position - direction * Time.fixedDeltaTime * walkSpeed * 0.1f * 
-                //    (remainingDyingPercentage > minBacklash ? remainingDyingPercentage : minBacklash));
             }
             prevDyingAnim = currDyingAnim;
         }

@@ -30,29 +30,18 @@ public class Lightning : Entity
         }
     }
 
-    private IEnumerator Animate()
-    {
-        while (true)
-        {
-            // Deactivate all frames
-            foreach (var frame in frames)
-            {
+    private IEnumerator Animate() {
+        while (true) {
+            foreach (var frame in frames) {
                 frame.SetActive(false);
             }
 
-            // Generate a random index, excluding the last one
-            do
-            {
+            do {
                 currentFrameIndex = Random.Range(0, frames.Length);
             } while (currentFrameIndex == lastFrameIndex);
-
-            // Activate the current frame
+            
             frames[currentFrameIndex].SetActive(true);
-
-            // Remember the current frame index for next time
             lastFrameIndex = currentFrameIndex;
-
-            // Wait for the next frame
             yield return new WaitForSeconds(frameInterval);
         }
     }
