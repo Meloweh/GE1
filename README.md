@@ -57,7 +57,27 @@
 [![IMAGE ALT TEXT](http://img.youtube.com/vi/klmC0mQ41Go/0.jpg)](http://www.youtube.com/watch?v=klmC0mQ41Go "Demo")
 
 ## Detailiertes Preview (Videos)
-Fehlt noch
+### Tilemap:
+![Tilemap](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image18.gif)
+### Rain:
+![Rain](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image26.gif)
+### Fireflies:
+![Fireflies](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image27.gif)
+### Night Cycle:
+![Night Cycle](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image31.gif)
+### Transition:
+![Transition](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image37.gif)
+### Dialog Box:
+![Dialog Box](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image46.gif)
+### Behavior Tree:
+![Behavior Tree](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image63.gif)
+### Lightning Attack:
+![Lightning Attack](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image77.gif)
+### Ball Attack:
+![Ball Attack](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image85.gif)
+### Hand Attack:
+![Hand Attack](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image88.gif)
+
 
 ## Verwendete Assets
 - [Behavior Tree For Everyone](https://assetstore.unity.com/packages/tools/visual-scripting/behavior-designer-behavior-trees-for-everyone-15277)
