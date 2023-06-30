@@ -68,6 +68,8 @@
 #### Karten:
 ![Karten](https://github.com/Meloweh/GE1/assets/49780209/c539f75a-7d95-4da5-aadb-6209e669a727)
 ### Partikeleffekte
+#### Eigenschaften:
+![Partikelsysteme](https://github.com/Meloweh/GE1/assets/49780209/eed892d1-06f9-4027-94c2-5cbe61f25bfb)
 #### Regen:
 ![Rain](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image26.gif)
 #### Glühwürmchen:
@@ -89,11 +91,15 @@
 ![Dialog Box](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image46.gif)
 #### Objektaufbau:
 ![DialogSystem](https://github.com/Meloweh/GE1/assets/49780209/0699fb74-bf0f-4be7-a1db-e39dfd65f6a9)
-### Behavior Tree:
+### Behavior Tree
+#### Demo:
 ![Behavior Tree](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image63.gif)
+#### BT Aufbau normale Gegner:
+![EnemyBehaviorTree](https://github.com/Meloweh/GE1/assets/49780209/e72eba09-2547-49f7-9a3a-c294aeb6e1a6)
+#### BT Aufbau Boss:
+![BossBehaviorTree](https://github.com/Meloweh/GE1/assets/49780209/727e4bf9-7869-4f6e-9fb4-fb4d3d8f9728)
 ### Pathing
 #### Statisches Pathing:
-##### Wegbeschreibungen:
 ![StatischesPathing](https://github.com/Meloweh/GE1/assets/49780209/08f0c742-6619-4f96-a211-83910ef519c3)
 ##### Definition der Wegpunkte:
 ![Waypoints](https://github.com/Meloweh/GE1/assets/49780209/ed1f0f66-a37f-44c0-a356-faca1b7b6604)
@@ -106,12 +112,20 @@
 ![BFSBelaufbareTilesErmitteln](https://github.com/Meloweh/GE1/assets/49780209/b312413e-2055-4b51-9457-842d3ec66fa8)
 ### Kampfeffekte
 #### Blitzeffekt:
+##### Demo:
 ![Lightning Attack](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image77.gif)
+##### Funktionsweise:
+![BlitzEffekt](https://github.com/Meloweh/GE1/assets/49780209/3138b8c3-0331-4873-aa65-cff0211722ad)
 #### Projektileffekt:
+##### Demo:
 ![Ball Attack](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image85.gif)
+##### Funktionsweise:
+![ProjektilEffekt](https://github.com/Meloweh/GE1/assets/49780209/083d849e-7052-4c77-b5bb-15e61d7c0411)
 #### Griffeffekt:
+##### Demo:
 ![Hand Attack](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image88.gif)
-
+##### Funktionsweise:
+![GriffEffekt](https://github.com/Meloweh/GE1/assets/49780209/dbe91e17-7089-471c-b7c7-c025455bda29)
 ## Verwendete Assets
 - [Behavior Tree For Everyone](https://assetstore.unity.com/packages/tools/visual-scripting/behavior-designer-behavior-trees-for-everyone-15277)
 - Input System v1.5.1 (über Package Manager)
