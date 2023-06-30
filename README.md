@@ -72,12 +72,23 @@
 ![Rain](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image26.gif)
 #### Glühwürmchen:
 ![Fireflies](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image27.gif)
-### Night Cycle:
+### Tag/Nacht-Zyklus
+#### Verlauf:
 ![Night Cycle](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image31.gif)
-### Transition:
+#### Umsetzung:
+![TagNachtZyklus](https://github.com/Meloweh/GE1/assets/49780209/697f7c82-f0c2-47f9-af91-fdaafc7f2d13)
+### Szenenwechsel
+#### Prinzip:
+![Szenenwechsel](https://github.com/Meloweh/GE1/assets/49780209/50cbe931-aafa-46df-b4c4-40da43dfc83d)
+#### Optik:
 ![Transition](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image37.gif)
-### Dialog Box:
+#### Funktionsweise:
+![NeueSzeneLaden](https://github.com/Meloweh/GE1/assets/49780209/e0735ffe-11f4-4a3c-88c5-35d76c49fee1)
+### Dialog Box
+#### Demo:
 ![Dialog Box](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image46.gif)
+#### Objektaufbau:
+![DialogSystem](https://github.com/Meloweh/GE1/assets/49780209/0699fb74-bf0f-4be7-a1db-e39dfd65f6a9)
 ### Behavior Tree:
 ![Behavior Tree](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image63.gif)
 ### Lightning Attack:
