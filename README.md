@@ -119,82 +119,82 @@
 
 ## Detailiertes Preview
 ### Tilemaps
-#### Tilemaps Anlegen:
+#### Tilemaps Anlegen
 ![TilemapsAnlegen](https://github.com/Meloweh/GE1/assets/49780209/516e31d0-43b9-4275-acbb-f30a42eec0c8)
-#### Tilemapping:
+#### Tilemapping
 ![Tilemap](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image18.gif)
-#### Karten:
+#### Karten
 ![Karten](https://github.com/Meloweh/GE1/assets/49780209/c539f75a-7d95-4da5-aadb-6209e669a727)
 ### Partikeleffekte
-#### Eigenschaften:
+#### Eigenschaften
 ![Partikelsysteme](https://github.com/Meloweh/GE1/assets/49780209/eed892d1-06f9-4027-94c2-5cbe61f25bfb)
-#### Regen:
+#### Regen
 ![Rain](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image26.gif)
-#### Glühwürmchen:
+#### Glühwürmchen
 ![Fireflies](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image27.gif)
 ### Tag-Nacht-Zyklus
-#### Verlauf:
+#### Verlauf
 ![Night Cycle](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image31.gif)
-#### Umsetzung:
+#### Umsetzung
 ![TagNachtZyklus](https://github.com/Meloweh/GE1/assets/49780209/697f7c82-f0c2-47f9-af91-fdaafc7f2d13)
 ### Szenenwechsel
-#### Prinzip:
+#### Prinzip
 ![Szenenwechsel](https://github.com/Meloweh/GE1/assets/49780209/50cbe931-aafa-46df-b4c4-40da43dfc83d)
-#### Optik:
+#### Optik
 ![Transition](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image37.gif)
-#### Funktionsweise:
+#### Funktionsweise
 ![NeueSzeneLaden](https://github.com/Meloweh/GE1/assets/49780209/e0735ffe-11f4-4a3c-88c5-35d76c49fee1)
 ### Dialog Box
-#### Demo:
+#### Demo
 ![Dialog Box](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image46.gif)
-#### Objektaufbau:
+#### Objektaufbau
 ![DialogSystem](https://github.com/Meloweh/GE1/assets/49780209/0699fb74-bf0f-4be7-a1db-e39dfd65f6a9)
 ### Behavior Tree
-#### Demo:
+#### Demo
 ![Behavior Tree](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image63.gif)
-#### BT Aufbau normale Gegner:
+#### BT Aufbau normale Gegner
 ![EnemyBehaviorTree](https://github.com/Meloweh/GE1/assets/49780209/e72eba09-2547-49f7-9a3a-c294aeb6e1a6)
-#### BT Aufbau Boss:
+#### BT Aufbau Boss
 ![BossBehaviorTree](https://github.com/Meloweh/GE1/assets/49780209/727e4bf9-7869-4f6e-9fb4-fb4d3d8f9728)
 ### Pathing
-#### Statisches Pathing:
+#### Statisches Pathing
 ![StatischesPathing](https://github.com/Meloweh/GE1/assets/49780209/08f0c742-6619-4f96-a211-83910ef519c3)
-##### Definition der Wegpunkte:
+##### Definition der Wegpunkte
 ![Waypoints](https://github.com/Meloweh/GE1/assets/49780209/ed1f0f66-a37f-44c0-a356-faca1b7b6604)
-#### BFS Pfadsuche:
-##### Funktionsweise:
+#### BFS Pfadsuche
+##### Funktionsweise
 ![BFSBeispielPart1](https://github.com/Meloweh/GE1/assets/49780209/284b0efa-1075-4cb7-9e17-52b0c7d8e859)
 ![BFSBeispielPart2](https://github.com/Meloweh/GE1/assets/49780209/c12c77a8-cb08-4d1e-9c3d-29c7be1e6e97)
 ![BFSBeispielPart3](https://github.com/Meloweh/GE1/assets/49780209/742ebf95-5482-484d-a8ae-087c1fe15900)
-##### Belaufbare Tiles finden:
+##### Belaufbare Tiles finden
 ![BFSBelaufbareTilesErmitteln](https://github.com/Meloweh/GE1/assets/49780209/b312413e-2055-4b51-9457-842d3ec66fa8)
 ### Kampfeffekte
-#### Blitzeffekt:
+#### Blitzeffekt
 ##### Demo:
 ![Lightning Attack](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image77.gif)
-##### Funktionsweise:
+##### Funktionsweise
 ![BlitzEffekt](https://github.com/Meloweh/GE1/assets/49780209/3138b8c3-0331-4873-aa65-cff0211722ad)
-#### Projektileffekt:
-##### Demo:
+#### Projektileffekt
+##### Demo
 ![Ball Attack](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image85.gif)
-##### Funktionsweise:
+##### Funktionsweise
 ![ProjektilEffekt](https://github.com/Meloweh/GE1/assets/49780209/083d849e-7052-4c77-b5bb-15e61d7c0411)
-#### Griffeffekt:
-##### Demo:
+#### Griffeffekt
+##### Demo
 ![Hand Attack](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image88.gif)
-##### Funktionsweise:
+##### Funktionsweise
 ![GriffEffekt](https://github.com/Meloweh/GE1/assets/49780209/dbe91e17-7089-471c-b7c7-c025455bda29)
 ### Animator
-#### BlendTree Struktur:
+#### BlendTree Struktur
 ![AnimationBlendtrees](https://github.com/Meloweh/GE1/assets/49780209/7d233596-e4fe-4a1f-89af-93c622886326)
-#### BlendTree Aufbau:
+#### BlendTree Aufbau
 ![BlendtreeAufbau](https://github.com/Meloweh/GE1/assets/49780209/2d3637e7-5c54-425d-80bc-ab7fe9c3e4f8)
 ### Entity Dependency Vererbung
 ![Vererbung](https://github.com/Meloweh/GE1/assets/49780209/af519d43-e36d-4086-826f-814cef6f3c18)
 ### Movements
-#### Bewegung und Kollision:
+#### Bewegung und Kollision
 ![MovementUndKollisionen](https://github.com/Meloweh/GE1/assets/49780209/6052fca7-09dd-483f-86c1-ae0a1bbc8cbb)
-#### Schaden und Rückstoß:
+#### Schaden und Rückstoß
 ![SchadenUndKnockback](https://github.com/Meloweh/GE1/assets/49780209/c984f1ef-3bc4-4b03-aff1-27ce78458cbf)
 ![KnockbackBerechnung](https://github.com/Meloweh/GE1/assets/49780209/b29c69c2-c24c-4ec0-a207-a7c3f54dede8)
 ![MovementUndKollisionen](https://github.com/Meloweh/GE1/assets/49780209/3534f69a-c7ef-4053-9a0d-8fcad7c750de)
