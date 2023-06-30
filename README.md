@@ -22,6 +22,7 @@
 - Angriff: "Z"
 
 ## Besondere Leistungen
+![BearbeiteteThemen](https://github.com/Meloweh/GE1/assets/49780209/3bfeeb27-e83b-4c00-90fb-f40f6595da45)
 - Dialogsystem
 - Pathing
 - Pfadsuche
@@ -29,6 +30,8 @@
 - Partikelsysteme (Glühwürmchen, Regen, Fledermaus Spawn)
 - Tilemaps & Collidermapping
 - Kampfsystem
+- Tag/Nacht Zyklus
+- Szenenwechsel
 
 ## Herausforderungen
 - Mergekonflikte mit Git
@@ -57,11 +60,17 @@
 [![IMAGE ALT TEXT](http://img.youtube.com/vi/klmC0mQ41Go/0.jpg)](http://www.youtube.com/watch?v=klmC0mQ41Go "Demo")
 
 ## Detailiertes Preview (Videos)
-### Tilemap:
+### Tilemaps
+#### Tilemaps Anlegen:
+![TilemapsAnlegen](https://github.com/Meloweh/GE1/assets/49780209/516e31d0-43b9-4275-acbb-f30a42eec0c8)
+#### Tilemapping:
 ![Tilemap](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image18.gif)
-### Rain:
+#### Karten:
+![Karten](https://github.com/Meloweh/GE1/assets/49780209/c539f75a-7d95-4da5-aadb-6209e669a727)
+### Partikeleffekte
+#### Regen:
 ![Rain](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image26.gif)
-### Fireflies:
+#### Glühwürmchen:
 ![Fireflies](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image27.gif)
 ### Night Cycle:
 ![Night Cycle](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image31.gif)
