@@ -91,13 +91,26 @@
 ![DialogSystem](https://github.com/Meloweh/GE1/assets/49780209/0699fb74-bf0f-4be7-a1db-e39dfd65f6a9)
 ### Behavior Tree:
 ![Behavior Tree](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image63.gif)
-### Lightning Attack:
+### Pathing
+#### Statisches Pathing:
+##### Wegbeschreibungen:
+![StatischesPathing](https://github.com/Meloweh/GE1/assets/49780209/08f0c742-6619-4f96-a211-83910ef519c3)
+##### Definition der Wegpunkte:
+![Waypoints](https://github.com/Meloweh/GE1/assets/49780209/ed1f0f66-a37f-44c0-a356-faca1b7b6604)
+#### BFS Pfadsuche:
+##### Funktionsweise:
+![BFSBeispielPart1](https://github.com/Meloweh/GE1/assets/49780209/284b0efa-1075-4cb7-9e17-52b0c7d8e859)
+![BFSBeispielPart2](https://github.com/Meloweh/GE1/assets/49780209/c12c77a8-cb08-4d1e-9c3d-29c7be1e6e97)
+![BFSBeispielPart3](https://github.com/Meloweh/GE1/assets/49780209/742ebf95-5482-484d-a8ae-087c1fe15900)
+##### Belaufbare Tiles finden:
+![BFSBelaufbareTilesErmitteln](https://github.com/Meloweh/GE1/assets/49780209/b312413e-2055-4b51-9457-842d3ec66fa8)
+### Kampfeffekte
+#### Blitzeffekt:
 ![Lightning Attack](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image77.gif)
-### Ball Attack:
+#### Projektileffekt:
 ![Ball Attack](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image85.gif)
-### Hand Attack:
+#### Griffeffekt:
 ![Hand Attack](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image88.gif)
-
 
 ## Verwendete Assets
 - [Behavior Tree For Everyone](https://assetstore.unity.com/packages/tools/visual-scripting/behavior-designer-behavior-trees-for-everyone-15277)
