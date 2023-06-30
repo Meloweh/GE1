@@ -1,5 +1,63 @@
 # Games Engine Projekt
 
+- [Projektname](#projektname)
+- [Authoren](#authoren)
+- [Besonderheiten](#besonderheiten)
+- [Steuerung](#steuerung)
+- [Besondere Leistungen](#besondere-leistungen)
+- [Herausforderungen](#herausforderungen)
+- [Gesammelte Erfahrungen](#gesammelte-erfahrungen)
+- [Zeitintensive Aufgaben](#zeitintensive-aufgaben)
+- [Demo Video](#demo-video)
+- [Detailiertes Preview](#detailiertes-preview)
+  * [Tilemaps](#tilemaps)
+    + [Tilemaps Anlegen:](#tilemaps-anlegen-)
+    + [Tilemapping:](#tilemapping-)
+    + [Karten:](#karten-)
+  * [Partikeleffekte](#partikeleffekte)
+    + [Eigenschaften:](#eigenschaften-)
+    + [Regen:](#regen-)
+    + [Glühwürmchen:](#gl-hw-rmchen-)
+  * [Tag-Nacht-Zyklus](#tag-nacht-zyklus)
+    + [Verlauf:](#verlauf-)
+    + [Umsetzung:](#umsetzung-)
+  * [Szenenwechsel](#szenenwechsel)
+    + [Prinzip:](#prinzip-)
+    + [Optik:](#optik-)
+    + [Funktionsweise:](#funktionsweise-)
+  * [Dialog Box](#dialog-box)
+    + [Demo:](#demo-)
+    + [Objektaufbau:](#objektaufbau-)
+  * [Behavior Tree](#behavior-tree)
+    + [Demo:](#demo--1)
+    + [BT Aufbau normale Gegner:](#bt-aufbau-normale-gegner-)
+    + [BT Aufbau Boss:](#bt-aufbau-boss-)
+  * [Pathing](#pathing)
+    + [Statisches Pathing:](#statisches-pathing-)
+      - [Definition der Wegpunkte:](#definition-der-wegpunkte-)
+    + [BFS Pfadsuche:](#bfs-pfadsuche-)
+      - [Funktionsweise:](#funktionsweise--1)
+      - [Belaufbare Tiles finden:](#belaufbare-tiles-finden-)
+  * [Kampfeffekte](#kampfeffekte)
+    + [Blitzeffekt:](#blitzeffekt-)
+      - [Demo:](#demo--2)
+      - [Funktionsweise:](#funktionsweise--2)
+    + [Projektileffekt:](#projektileffekt-)
+      - [Demo:](#demo--3)
+      - [Funktionsweise:](#funktionsweise--3)
+    + [Griffeffekt:](#griffeffekt-)
+      - [Demo:](#demo--4)
+      - [Funktionsweise:](#funktionsweise--4)
+  * [Animator](#animator)
+    + [BlendTree Struktur:](#blendtree-struktur-)
+    + [BlendTree Aufbau:](#blendtree-aufbau-)
+  * [Entity Dependency Vererbung](#entity-dependency-vererbung)
+  * [Movements](#movements)
+    + [Bewegung und Kollision:](#bewegung-und-kollision-)
+    + [Schaden und Rückstoß:](#schaden-und-r-cksto--)
+- [Verwendete Assets](#verwendete-assets)
+- [Inspiration](#inspiration)
+
 ## Projektname
 - Spielname: "Luminoth’s Legacy"
 - Ilias Name: "Boss-Kampf Entwicklung oder Implementierung verschiedener Behavior Trees in 2D"
@@ -30,7 +88,7 @@
 - Partikelsysteme (Glühwürmchen, Regen, Fledermaus Spawn)
 - Tilemaps & Collidermapping
 - Kampfsystem
-- Tag/Nacht Zyklus
+- Tag-Nacht Zyklus
 - Szenenwechsel
 
 ## Herausforderungen
@@ -56,10 +114,10 @@
 - Sprite Sheets zuschneiden
 - Animation Clips erstellen
 
-## Demo (Video)
+## Demo Video
 [![IMAGE ALT TEXT](http://img.youtube.com/vi/klmC0mQ41Go/0.jpg)](http://www.youtube.com/watch?v=klmC0mQ41Go "Demo")
 
-## Detailiertes Preview (Videos)
+## Detailiertes Preview
 ### Tilemaps
 #### Tilemaps Anlegen:
 ![TilemapsAnlegen](https://github.com/Meloweh/GE1/assets/49780209/516e31d0-43b9-4275-acbb-f30a42eec0c8)
@@ -74,7 +132,7 @@
 ![Rain](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image26.gif)
 #### Glühwürmchen:
 ![Fireflies](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image27.gif)
-### Tag/Nacht-Zyklus
+### Tag-Nacht-Zyklus
 #### Verlauf:
 ![Night Cycle](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image31.gif)
 #### Umsetzung:
@@ -126,6 +184,20 @@
 ![Hand Attack](https://github.com/Meloweh/GE1/blob/mergeJune18/gifs/image88.gif)
 ##### Funktionsweise:
 ![GriffEffekt](https://github.com/Meloweh/GE1/assets/49780209/dbe91e17-7089-471c-b7c7-c025455bda29)
+### Animator
+#### BlendTree Struktur:
+![AnimationBlendtrees](https://github.com/Meloweh/GE1/assets/49780209/7d233596-e4fe-4a1f-89af-93c622886326)
+#### BlendTree Aufbau:
+![BlendtreeAufbau](https://github.com/Meloweh/GE1/assets/49780209/2d3637e7-5c54-425d-80bc-ab7fe9c3e4f8)
+### Entity Dependency Vererbung
+![Vererbung](https://github.com/Meloweh/GE1/assets/49780209/af519d43-e36d-4086-826f-814cef6f3c18)
+### Movements
+#### Bewegung und Kollision:
+![MovementUndKollisionen](https://github.com/Meloweh/GE1/assets/49780209/6052fca7-09dd-483f-86c1-ae0a1bbc8cbb)
+#### Schaden und Rückstoß:
+![SchadenUndKnockback](https://github.com/Meloweh/GE1/assets/49780209/c984f1ef-3bc4-4b03-aff1-27ce78458cbf)
+![KnockbackBerechnung](https://github.com/Meloweh/GE1/assets/49780209/b29c69c2-c24c-4ec0-a207-a7c3f54dede8)
+![MovementUndKollisionen](https://github.com/Meloweh/GE1/assets/49780209/3534f69a-c7ef-4053-9a0d-8fcad7c750de)
 ## Verwendete Assets
 - [Behavior Tree For Everyone](https://assetstore.unity.com/packages/tools/visual-scripting/behavior-designer-behavior-trees-for-everyone-15277)
 - Input System v1.5.1 (über Package Manager)
@@ -133,7 +205,6 @@
 - Hand Sprite Sheet
 - [Fantasy RPG Heroes Pack](https://franuka.itch.io/fantasy-rpg-heroes-pack)
 - [Fantasy RPG Monster Pack](https://franuka.itch.io/fantasy-rpg-monster-pack)
-
 ## Inspiration
 - [Tilemaps](https://www.youtube.com/watch?v=DTp5zi8_u1U)
 - [Character Move](https://www.youtube.com/watch?v=0cycus0Ojnc)
